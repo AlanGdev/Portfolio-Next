@@ -9,6 +9,9 @@ export default function Home() {
         <h1 className="mb-4 text-4xl font-bold">
           Développeur Web Freelance - Alan Grolleau
         </h1>
+        <h2 className="mb-2 text-2xl font-semibold">
+          Des applications sur mesure pour booster votre activité
+        </h2>
         <div className="flex flex-col md:flex-row">
           <div className="flex w-full flex-col justify-between p-4 text-lg md:w-2/3">
             <p>
@@ -32,6 +35,12 @@ export default function Home() {
               className="rounded-lg object-cover shadow"
             />
           </div>
+        </div>
+        <div className="container mb-4">
+          <h2 className="text-2xl font-bold">Projets</h2>
+        </div>
+        <div className="container mb-4">
+          <h2 className="text-2xl font-bold">Technologies utilisées</h2>
         </div>
       </div>
     </>
