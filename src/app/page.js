@@ -1,8 +1,24 @@
 import Image from 'next/image';
 import styles from './page.module.css';
 import Link from 'next/link';
+import CarouselProjects from '@/components/carouselProjets';
+import ListeTechnos from '@/components/listeTechnos';
 
-export default function Home() {
+export default async function Home() {
+  const resProjects = await fetch(
+    `${process.env.NEXT_PUBLIC_BASE_URL}/api/projects`,
+    {
+      cache: 'no-store',
+    }
+  );
+  const resTechnos = await fetch(
+    `${process.env.NEXT_PUBLIC_BASE_URL}/api/techno`,
+    {
+      cache: 'no-store',
+    }
+  );
+  const projects = await resProjects.json();
+  const technos = await resTechnos.json();
   return (
     <>
       <div className="container mx-auto px-4">
@@ -37,10 +53,13 @@ export default function Home() {
           </div>
         </div>
         <div className="container mb-4">
-          <h2 className="text-2xl font-bold">Projets</h2>
+          <h2 className="mb-4 text-2xl font-bold">Projets</h2>
+
+          <CarouselProjects projects={projects} />
         </div>
         <div className="container mb-4">
           <h2 className="text-2xl font-bold">Technologies utilisées</h2>
+          <ListeTechnos technos={technos} />
         </div>
       </div>
     </>
