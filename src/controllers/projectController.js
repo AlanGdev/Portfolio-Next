@@ -78,15 +78,19 @@ export async function getProjects() {
   }
 }
 
-exports.getOneProject = (req, res, next) => {
+export async function getOneProject({ params }) {
   console.log('find One');
-  Project.findOne({ _id: req.params.id })
-    .populate('technologies')
-    .then((project) => {
-      if (!project) {
-        return res.status(400).json({ error: 'requête invalide' });
-      }
-      res.status(200).json(project);
-    })
-    .catch((error) => res.status(500).json({ error: 'erreur serveur' }));
-};
+  await dbConnect();
+  try {
+    const project = await Project.findOne({ _id: params.id }).populate(
+      'technologies'
+    );
+    if (!project) {
+      throw new Error('Projet non trouvé');
+    }
+    console.log(project);
+    return project;
+  } catch (error) {
+    throw new Error('Erreur serveur');
+  }
+}

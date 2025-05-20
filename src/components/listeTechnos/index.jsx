@@ -33,6 +33,7 @@ export default function ListeTechnos({ technos }) {
                       width={50}
                       height={50}
                       className="me-2"
+                      alt={`logo ${techno.nom}`}
                     />
                     {techno.nom}
                   </div>

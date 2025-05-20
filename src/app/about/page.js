@@ -1,4 +1,10 @@
-export default function Apropos() {
+export default async function Apropos() {
+  const resSkills = await fetch(
+    `${process.env.NEXT_PUBLIC_BASE_URL}/api/skill`,
+    { cache: 'no-store' }
+  );
+  const skills = await resSkills.json();
+  console.log(skills);
   return (
     <>
       <div className="container mx-auto px-4">
@@ -22,6 +28,30 @@ export default function Apropos() {
           de pédaler sur les sentiers bretons ! À travers ce portfolio, je vous
           invite à découvrir mes projets et mon approche du développement web.
         </p>
+        {skills.map((skill) => (
+          <div
+            tabIndex={0}
+            key={skill.categorie}
+            className="collapse-arrow bg-base-100 bg-base-100 border-base-300 collapse mt-4 border"
+          >
+            <div className="collapse-title font-semibold">
+              {skill.categorie}
+            </div>
+            <div key={skill} className="collapse-content text-sm">
+              <ul>
+                {skill.skills.map((skill, index) => (
+                  <li key={index}>{skill}</li>
+                ))}
+              </ul>
+              <h4 className="px-4 pt-4 font-semibold">Projets associés:</h4>
+              <ul className="px-4">
+                {skill.projets.map((projet, index) => (
+                  <li key={index}>{projet.nom}</li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        ))}
       </div>
     </>
   );
