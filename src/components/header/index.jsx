@@ -1,5 +1,5 @@
-'use client';
 import Link from 'next/link';
+import { LoginButton } from '../loginButton';
 
 export default function Header() {
   return (
@@ -40,6 +40,16 @@ export default function Header() {
               <li>
                 <Link href="/contact">Contact</Link>
               </li>
+              <li>
+                <details>
+                  <summary>Admin</summary>
+                  <ul className="bg-base-200 rounded-t-none p-2">
+                    <li>
+                      <LoginButton />
+                    </li>
+                  </ul>
+                </details>
+              </li>
             </ul>
           </div>
           <Link href="/" className="btn btn-ghost text-xl">
@@ -64,6 +74,7 @@ export default function Header() {
         </div>
         <div className="navbar-end">
           <a className="btn">Dark/Light Mode</a>
+          <LoginButton />
         </div>
       </div>
     </header>

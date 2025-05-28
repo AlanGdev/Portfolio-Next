@@ -48,18 +48,28 @@ export default function DetailProjet({ project }) {
             ))}
           </div>
         </div>
-        {project.lien_github && (
-          <Link href={project.lien_github}>
-            <button className="btn btn-neutral btn-outline my-4">
+        <div className="flex justify-end gap-4">
+          {project.lien_github && (
+            <a
+              href={project.lien_github}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn btn-neutral btn-outline my-4"
+            >
               lien GitHub
-            </button>
-          </Link>
-        )}
-        {project.lien_demo && (
-          <Link href={project.lien_demo}>
-            <button className="btn btn-neutral my-4">Demo</button>
-          </Link>
-        )}
+            </a>
+          )}
+          {project.lien_demo && (
+            <a
+              href={project.lien_demo}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn btn-neutral my-4"
+            >
+              Demo
+            </a>
+          )}
+        </div>
         <div className="carousel w-full">
           {project.images_detail.map((image, index) => (
             <div
@@ -69,7 +79,7 @@ export default function DetailProjet({ project }) {
             >
               <Image
                 src={image}
-                width={400}
+                width={200}
                 height={400}
                 alt="print-écran projet"
                 className="mx-auto"
