@@ -3,8 +3,8 @@ import { LoginButton } from '../loginButton';
 
 export default function Header() {
   return (
-    <header>
-      <div className="navbar bg-base-200 mb-4 shadow-sm">
+    <header className="bg-base-200 sticky top-0 z-50 shadow-md">
+      <nav className="navbar bg-base-200 mb-4 shadow-sm">
         <div className="navbar-start">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -73,10 +73,17 @@ export default function Header() {
           </ul>
         </div>
         <div className="navbar-end">
-          <a className="btn">Dark/Light Mode</a>
+          <button
+            //onClick={toggleTheme}
+            className="btn btn-sm btn-active btn-warning"
+          >
+            {/*
+            {theme === 'business' ? '☀️' : '🌙'}*/}
+          </button>
+
           <LoginButton />
         </div>
-      </div>
+      </nav>
     </header>
   );
 }

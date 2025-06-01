@@ -1,6 +1,7 @@
 'use client';
 // pages/index.js
 import Head from 'next/head';
+import Image from 'next/image';
 import { useEffect, useState, useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
@@ -51,7 +52,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <header className="bg-base-200 sticky top-0 z-50 shadow-md">
+      {/*     <header className="bg-base-200 sticky top-0 z-50 shadow-md">
         <nav className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
           <div className="text-base-content text-xl font-bold">Alan.dev</div>
           <button
@@ -79,7 +80,7 @@ export default function Home() {
           </ul>
         </nav>
       </header>
-
+*/}
       <main className="bg-base-100 text-base-content">
         {/* HERO */}
         {/*        <section className="flex h-screen items-center justify-center px-4 text-center">
@@ -116,10 +117,14 @@ export default function Home() {
               {[1, 2, 3].map((i) => (
                 <motion.div
                   key={i}
-                  className="bg-base-300 rounded-xl p-6 shadow-lg transition hover:scale-105"
-                  initial={{ opacity: 0, y: 50 }}
-                  animate={projetsInView ? { opacity: 1, y: 0 } : {}}
-                  transition={{ delay: i * 0.2 }}
+                  className="bg-base-300 rounded-xl p-6 shadow-lg transition-transform duration-300 ease-out hover:scale-105"
+                  initial={{ opacity: 0, y: 200, scale: 0 }}
+                  animate={projetsInView ? { opacity: 1, y: 0, scale: 1 } : {}}
+                  transition={{
+                    delay: (i - 1) * 0.3,
+                    duration: 0.5,
+                    ease: 'easeInOut',
+                  }}
                 >
                   <div className="bg-base-200 mb-4 h-40 rounded"></div>
                   <h3 className="text-base-content mb-2 text-xl font-semibold">
@@ -145,7 +150,7 @@ export default function Home() {
               className="text-base-content mb-8 text-center text-3xl font-bold"
               initial={{ opacity: 0, y: 50 }}
               animate={aboutInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ delay: 0.2 }}
+              transition={{ delay: 0.3 }}
             >
               À propos de moi
             </motion.h2>
@@ -154,30 +159,52 @@ export default function Home() {
               className="flex flex-col items-center gap-8 md:flex-row"
               initial={{ opacity: 0, x: -50 }}
               animate={aboutInView ? { opacity: 1, x: 0 } : {}}
-              transition={{ delay: 0.4 }}
+              transition={{ delay: 0.5 }}
             >
-              <img
+              <Image
                 src="/alan1.webp"
                 alt="Photo de Alan"
-                className="border-primary h-48 w-48 rounded-full border-4 object-cover"
+                width={200}
+                height={200}
+                className="border-primary h-48 w-48 rounded-full border object-cover"
               />
               <div className="text-base-content">
                 <p className="mb-4">
-                  Passionné par le développement web, je conçois des sites
-                  performants et esthétiques en utilisant les dernières
-                  technologies comme Next.js, Tailwind CSS et Node.js.
+                  Après une riche expérience dans la gestion d’équipes et le
+                  suivi d’activités techniques dans les secteurs de l’énergie et
+                  de l’eau, j’ai choisi d’orienter mon parcours vers une voie
+                  qui allie rigueur analytique et créativité : le développement
+                  web.
+                  <br /> Passionné par l’optimisation des processus et la
+                  création d’outils numériques, je mets aujourd’hui mes
+                  compétences en programmation au service de solutions
+                  performantes et intuitives.
+                  <br />
+                  Mon expertise en reporting et en gestion de données, combinée
+                  à mes compétences en développement full-stack, me permet de
+                  concevoir des applications adaptées aux besoins des
+                  entreprises et des utilisateurs. Curieux de nature et toujours
+                  en quête d’amélioration, j’aime relever de nouveaux défis
+                  techniques et apprendre de chaque projet. <br /> À travers ce
+                  portfolio, je vous invite à découvrir mes projets et mon
+                  approche du développement web.
                 </p>
                 <div className="flex flex-wrap gap-2">
-                  {['Next.js', 'React', 'Tailwind', 'Node.js', 'MongoDB'].map(
-                    (skill) => (
-                      <span
-                        key={skill}
-                        className="badge badge-outline border-primary text-primary"
-                      >
-                        {skill}
-                      </span>
-                    )
-                  )}
+                  {[
+                    'Next.js',
+                    'React',
+                    'Tailwind',
+                    'Bootstarp',
+                    'Node.js',
+                    'MongoDB',
+                  ].map((skill) => (
+                    <span
+                      key={skill}
+                      className="badge badge-outline border-primary text-primary"
+                    >
+                      {skill}
+                    </span>
+                  ))}
                 </div>
               </div>
             </motion.div>
