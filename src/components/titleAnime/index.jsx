@@ -1,10 +1,16 @@
 'use client';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, isValidElement } from 'react';
 import { Children } from 'react';
 
 export function TitleAnime({ children }) {
-  const fullText = Children.toArray(children).join('');
   const [text, setText] = useState('');
+  const fullText = Children.map(children, (child) => {
+    if (isValidElement(child)) {
+      const content = child.props.children;
+      if (Array.isArray(content)) return content.join('');
+      return content;
+    }
+  }).join('');
 
   useEffect(() => {
     let i = 0;

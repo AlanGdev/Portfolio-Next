@@ -23,7 +23,7 @@ export default function RootLayout({ children }) {
     <html lang="fr">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
         <Header />
-        <main>{children}</main>
+        <main className="bg-base-100 text-base-content">{children}</main>
       </body>
     </html>
   );
