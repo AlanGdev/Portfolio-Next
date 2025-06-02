@@ -1,7 +1,9 @@
 'use client';
 import { useState, useEffect } from 'react';
-export function TitleAnime({ message = '' }) {
-  const fullText = message;
+import { Children } from 'react';
+
+export function TitleAnime({ children }) {
+  const fullText = Children.toArray(children).join('');
   const [text, setText] = useState('');
 
   useEffect(() => {
@@ -14,13 +16,12 @@ export function TitleAnime({ message = '' }) {
       }
     }, 80);
     return () => clearInterval(typing);
-  }, []);
+  }, [fullText]);
+
   return (
-    <>
-      <p className="mb-4 min-h-[96px] text-4xl font-bold sm:text-6xl">
-        {text}{' '}
-        <span className="border-base-content ml-1 animate-pulse border-r-2" />
-      </p>
-    </>
+    <h1 className="mb-4 min-h-[96px] text-4xl font-bold sm:text-6xl">
+      {text}
+      <span className="border-base-content ml-1 animate-pulse border-r-2" />
+    </h1>
   );
 }

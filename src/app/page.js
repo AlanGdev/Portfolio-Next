@@ -5,7 +5,7 @@ import Image from 'next/image';
 import { useEffect, useState, useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
-import { HeroSection } from '@/components/heroSection';
+import { RecupProjets } from '@/components/projectSectionServer';
 
 export default function Home() {
   const fullText = 'Bonjour, je suis Alan – Développeur Web.';
@@ -23,6 +23,8 @@ export default function Home() {
 
   const projetsRef = useRef(null);
   const projetsInView = useInView(projetsRef, { once: true });
+  const projects = RecupProjets();
+  console.log(projects);
 
   const aboutRef = useRef(null);
   const aboutInView = useInView(aboutRef, { once: true });
@@ -83,25 +85,26 @@ export default function Home() {
 */}
       <main className="bg-base-100 text-base-content">
         {/* HERO */}
-        {/*        <section className="flex h-screen items-center justify-center px-4 text-center">
-          <div>
-            <h1 className="mb-4 min-h-[96px] text-4xl font-bold sm:text-6xl">
-              {text}
-              <span className="border-base-content ml-1 animate-pulse border-r-2" />
-            </h1>
-            <p className="text-base-content mx-auto mb-8 max-w-xl text-lg sm:text-xl">
-              Développement de sites web modernes, performants et bien
-              référencés.
-            </p>
-            <a
-              href="#projets"
-              className="btn btn-primary bg-primary text-primary-content hover:bg-primary-focus"
-            >
-              Voir mes projets
-            </a>
-          </div>
-        </section>*/}
-        <HeroSection />
+        {
+          <section className="flex h-screen items-center justify-center px-4 text-center">
+            <div>
+              <h1 className="mb-4 min-h-[96px] text-4xl font-bold sm:text-6xl">
+                {text}
+                <span className="border-base-content ml-1 animate-pulse border-r-2" />
+              </h1>
+              <p className="text-base-content mx-auto mb-8 max-w-xl text-lg sm:text-xl">
+                Développement de sites web modernes, performants et bien
+                référencés.
+              </p>
+              <a
+                href="#projets"
+                className="btn btn-primary bg-primary text-primary-content hover:bg-primary-focus"
+              >
+                Voir mes projets
+              </a>
+            </div>
+          </section>
+        }
 
         {/* PROJETS */}
         <section
@@ -114,7 +117,7 @@ export default function Home() {
               Mes projets
             </h2>
             <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-              {[1, 2, 3].map((i) => (
+              {projects.map((i) => (
                 <motion.div
                   key={i}
                   className="bg-base-300 rounded-xl p-6 shadow-lg transition-transform duration-300 ease-out hover:scale-105"

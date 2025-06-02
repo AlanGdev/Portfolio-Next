@@ -32,13 +32,13 @@ export default function Header() {
                 <Link href="/">Accueil</Link>
               </li>
               <li>
-                <Link href="/about">À propos</Link>
+                <Link href="#a-propos">À propos</Link>
               </li>
               <li>
-                <Link href="/projects">Projets</Link>
+                <Link href="#projets">Projets</Link>
               </li>
               <li>
-                <Link href="/contact">Contact</Link>
+                <Link href="#contact">Contact</Link>
               </li>
               <li>
                 <details>
@@ -62,13 +62,13 @@ export default function Header() {
               <Link href="/">Accueil</Link>
             </li>
             <li>
-              <Link href="/about">À propos</Link>
+              <Link href="#a-propos">À propos</Link>
             </li>
             <li>
-              <Link href="/projects">Projets</Link>
+              <Link href="#projets">Projets</Link>
             </li>
             <li>
-              <Link href="/contact">Contact</Link>
+              <Link href="#contact">Contact</Link>
             </li>
           </ul>
         </div>

@@ -1,5 +1,5 @@
 import { TitleAnime } from '../titleAnime';
-export function HeroSection() {
+/*export function HeroSection() {
   return (
     <>
       <section className="flex h-screen items-center justify-center px-4 text-center">
@@ -17,6 +17,41 @@ export function HeroSection() {
           </a>
         </div>
       </section>
+    </>
+  );
+}*/
+
+export function TitleContenu() {
+  return <>Alan Grolleau - Développeur web</>;
+}
+export function ParagContenu() {
+  return (
+    <p>
+      Développeur web freelance, je conçois des sites et applications modernes,
+      performants et évolutifs. Que ce soit pour un site vitrine, une
+      application métier ou une optimisation SEO, je vous accompagne avec des
+      solutions adaptées à vos besoins.
+    </p>
+  );
+}
+
+export function ProjectButton() {
+  return (
+    <a href="#projets" className="btn btn-soft btn-success">
+      Voir mes projets
+    </a>
+  );
+}
+export function HeroSection() {
+  return (
+    <>
+      <TitleAnime>
+        <TitleContenu />
+      </TitleAnime>
+
+      <TitleContenu />
+      <ParagContenu />
+      <ProjectButton />
     </>
   );
 }
