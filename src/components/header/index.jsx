@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { LoginButton } from '../loginButton';
+import { ThemeSwitcher } from '../themeSwitcher';
 
 export default function Header() {
   return (
@@ -32,13 +33,13 @@ export default function Header() {
                 <Link href="/">Accueil</Link>
               </li>
               <li>
-                <Link href="#a-propos">À propos</Link>
+                <Link href="/#a-propos">À propos</Link>
               </li>
               <li>
-                <Link href="#projets">Projets</Link>
+                <Link href="/#projets">Projets</Link>
               </li>
               <li>
-                <Link href="#contact">Contact</Link>
+                <Link href="/#contact">Contact</Link>
               </li>
               <li>
                 <details>
@@ -62,25 +63,18 @@ export default function Header() {
               <Link href="/">Accueil</Link>
             </li>
             <li>
-              <Link href="#a-propos">À propos</Link>
+              <Link href="/#a-propos">À propos</Link>
             </li>
             <li>
-              <Link href="#projets">Projets</Link>
+              <Link href="/#projets">Projets</Link>
             </li>
             <li>
-              <Link href="#contact">Contact</Link>
+              <Link href="/#contact">Contact</Link>
             </li>
           </ul>
         </div>
         <div className="navbar-end">
-          <button
-            //onClick={toggleTheme}
-            className="btn btn-sm btn-active btn-warning"
-          >
-            {/*
-            {theme === 'business' ? '☀️' : '🌙'}*/}
-          </button>
-
+          <ThemeSwitcher />
           <LoginButton />
         </div>
       </nav>

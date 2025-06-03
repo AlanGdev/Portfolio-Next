@@ -5,7 +5,7 @@ import Image from 'next/image';
 import { useEffect, useState, useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
-import { RecupProjets } from '@/components/projectSectionServer';
+import { RecupProjets } from '@/components/projectsSectionServer';
 
 export default function Home() {
   const fullText = 'Bonjour, je suis Alan – Développeur Web.';

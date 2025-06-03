@@ -1,9 +1,4 @@
 import { TitleAnime } from '../titleAnime';
-import {
-  TitleContenu,
-  ParagContenu,
-  ProjectButton,
-} from '../heroSectionServerComponents';
 
 export function HeroSection() {
   return (
@@ -11,11 +6,19 @@ export function HeroSection() {
       <section className="flex h-screen items-center justify-center px-4 text-center">
         <div>
           {' '}
-          <TitleAnime>
-            <TitleContenu />
-          </TitleAnime>
-          <ParagContenu />
-          <ProjectButton />
+          <TitleAnime message="Bonjour, je suis Alan - Développeur Web"></TitleAnime>
+          <p className="text-base-content mx-auto mb-8 max-w-xl text-lg sm:text-xl">
+            Développeur web freelance, je conçois des sites et applications
+            modernes, performants et évolutifs. Que ce soit pour un site
+            vitrine, une application métier ou une optimisation SEO, je vous
+            accompagne avec des solutions adaptées à vos besoins.
+          </p>
+          <a
+            href="#projets"
+            className="btn btn-soft btn-success hover:scale-105"
+          >
+            Voir mes projets
+          </a>
         </div>
       </section>
     </>

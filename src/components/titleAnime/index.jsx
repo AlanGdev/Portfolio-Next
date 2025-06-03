@@ -1,32 +1,27 @@
 'use client';
-import { useState, useEffect, isValidElement } from 'react';
-import { Children } from 'react';
+import { useState, useEffect } from 'react';
 
-export function TitleAnime({ children }) {
+export function TitleAnime({ message = '' }) {
   const [text, setText] = useState('');
-  const fullText = Children.map(children, (child) => {
-    if (isValidElement(child)) {
-      const content = child.props.children;
-      if (Array.isArray(content)) return content.join('');
-      return content;
-    }
-  }).join('');
 
   useEffect(() => {
     let i = 0;
     const typing = setInterval(() => {
-      setText(fullText.slice(0, i + 1));
+      setText(message.slice(0, i + 1));
       i++;
-      if (i === fullText.length) {
+      if (i === message.length) {
         clearInterval(typing);
       }
-    }, 80);
+    }, 50);
     return () => clearInterval(typing);
-  }, [fullText]);
+  }, [message]);
 
   return (
-    <h1 className="mb-4 min-h-[96px] text-4xl font-bold sm:text-6xl">
-      {text}
+    <h1
+      aria-label={message}
+      className="mb-4 min-h-[96px] text-4xl font-bold sm:text-6xl"
+    >
+      {text || message}
       <span className="border-base-content ml-1 animate-pulse border-r-2" />
     </h1>
   );
