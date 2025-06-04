@@ -1,5 +1,5 @@
 import Project from '@/models/project';
-
+import Technology from '@/models/techno';
 import dbConnect from '@/lib/mongodb';
 
 exports.createProject = async (req, res) => {
@@ -78,13 +78,13 @@ export async function getProjects() {
   }
 }
 
-export async function getOneProject({ params }) {
+export async function getOneProject(id) {
   console.log('find One');
+  console.log(id);
   await dbConnect();
   try {
-    const project = await Project.findOne({ _id: params.id }).populate(
-      'technologies'
-    );
+    const project = await Project.findById(id).populate('technologies');
+    //const project = { nom: 'alan' };
     if (!project) {
       throw new Error('Projet non trouvé');
     }

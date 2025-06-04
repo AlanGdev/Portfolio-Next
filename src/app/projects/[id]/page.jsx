@@ -1,6 +1,8 @@
 import DetailProjet from '@/components/detailProjet';
+
 export default async function Projet({ params }) {
   const { id } = params;
+  console.log('params qui arrive à app/projects/[id]', { id });
   const res = await fetch(
     `${process.env.NEXT_PUBLIC_BASE_URL}/api/projects/${id}`,
     {
@@ -8,7 +10,6 @@ export default async function Projet({ params }) {
     }
   );
   const project = await res.json();
-  console.log(project);
   return (
     <>
       <DetailProjet project={project} />

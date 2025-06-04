@@ -27,7 +27,7 @@ export function ThemeSwitcher() {
         <input
           type="checkbox"
           className="theme-controller"
-          value="coffee"
+          value="dracula"
           onChange={handleChange}
           checked={theme}
         />

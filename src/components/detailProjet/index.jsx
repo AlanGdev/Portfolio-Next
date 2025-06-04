@@ -1,62 +1,99 @@
 import Image from 'next/image';
 import Link from 'next/link';
+
 export default function DetailProjet({ project }) {
   return (
     <>
-      <div className="container mx-auto p-4">
-        <h1 className="text-4xl font-semibold">{project.nom}</h1>
-        <figure>
-          <Image
-            src={project.image}
-            width={400}
-            height={200}
-            alt={`Présentation ${project.nom}`}
-            className="mx-auto"
-          />
-        </figure>
-        <p className="p-4">{project.description}</p>
+      <Link href="/#projets" className="mx-2 underline">
+        Retour aux projets
+      </Link>
+      <div className="container mx-auto max-w-5xl p-6">
+        {/* Titre et image principale */}
+        <section className="mb-8">
+          <h1 className="mb-4 text-center text-5xl font-bold">{project.nom}</h1>
+          <figure className="mx-auto w-full max-w-4xl overflow-hidden rounded-lg shadow-lg">
+            <Image
+              src={project.image}
+              width={800}
+              height={400}
+              alt={`Présentation ${project.nom}`}
+              className="h-64 w-full object-cover sm:h-96"
+              priority
+            />
+          </figure>
+        </section>
+
+        {/* Description */}
+        <section className="mb-10 px-4 sm:px-0">
+          <h2 className="border-primary mb-3 border-b-2 pb-1 text-2xl font-semibold">
+            Description
+          </h2>
+          <p className="text-lg leading-relaxed">{project.description}</p>
+        </section>
+
+        {/* Détails techniques */}
         {project.categorie && (
-          <div className="flex-column">
-            <p>
-              <span className="font-bold">Catégorie: </span> {project.categorie}
-            </p>
-            <p className="mb-4 flex items-center">
-              <span className="font-bold">Technologies: </span>
-              {project.technologies.map((tech) => (
-                <Image
-                  key={tech._id}
-                  src={tech.image}
-                  width={50}
-                  height={50}
-                  alt={tech.nom}
-                  className="mx-2"
-                />
-              ))}
-            </p>
-          </div>
+          <section className="mb-10 px-4 sm:px-0">
+            <h2 className="border-primary mb-4 border-b-2 pb-1 text-2xl font-semibold">
+              Détails techniques
+            </h2>
+            <div className="flex flex-col gap-6 sm:flex-row sm:items-center">
+              <p className="text-lg font-medium">
+                <span className="font-bold">Catégorie:</span>{' '}
+                {project.categorie}
+              </p>
+              <div className="flex flex-wrap items-center gap-4">
+                <span className="text-lg font-bold">Technologies:</span>
+                {project.technologies.map((tech) => (
+                  <div
+                    key={tech._id}
+                    className="tooltip tooltip-bottom"
+                    data-tip={tech.nom}
+                  >
+                    <Image
+                      src={tech.image}
+                      width={48}
+                      height={48}
+                      alt={tech.nom}
+                      className="rounded-md border border-gray-300"
+                    />
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
         )}
-        <div
-          tabIndex={0}
-          className="bg-base-200 border-base-300 collapse-arrow collapse border"
-        >
-          <div className="collapse-title cursor-pointer font-semibold">
-            Problématiques développées:
+
+        {/* Problématiques développées */}
+        <section className="mb-10 px-4 sm:px-0">
+          <div
+            tabIndex={0}
+            className="collapse-arrow border-base-300 bg-base-200 rounded-box collapse border"
+          >
+            <input type="checkbox" className="peer" />
+            <div className="collapse-title peer-checked:bg-primary peer-checked:text-primary-content cursor-pointer text-xl font-semibold">
+              Problématiques développées
+            </div>
+            <div className="collapse-content text-base-content">
+              <ul className="list-inside list-disc space-y-2">
+                {project.problematics.map((prob, index) => (
+                  <li key={index}>{prob}</li>
+                ))}
+              </ul>
+            </div>
           </div>
-          <div className="collapse-content text-sm">
-            {project.problematics.map((prob, index) => (
-              <p key={index}>{prob}</p>
-            ))}
-          </div>
-        </div>
-        <div className="flex justify-end gap-4">
+        </section>
+
+        {/* Liens GitHub et Demo */}
+        <section className="mb-12 flex flex-wrap justify-center gap-6 px-4 sm:px-0">
           {project.lien_github && (
             <a
               href={project.lien_github}
               target="_blank"
               rel="noopener noreferrer"
-              className="btn btn-neutral btn-outline my-4"
+              className="btn btn-outline btn-primary"
             >
-              lien GitHub
+              Voir le code sur GitHub
             </a>
           )}
           {project.lien_demo && (
@@ -64,40 +101,40 @@ export default function DetailProjet({ project }) {
               href={project.lien_demo}
               target="_blank"
               rel="noopener noreferrer"
-              className="btn btn-neutral my-4"
+              className="btn btn-primary"
             >
-              Demo
+              Voir la démo
             </a>
           )}
-        </div>
-        <div className="carousel w-full">
-          {project.images_detail.map((image, index) => (
-            <div
-              key={index}
-              id={index}
-              className="carousel-item relative w-full"
-            >
-              <Image
-                src={image}
-                width={200}
-                height={400}
-                alt="print-écran projet"
-                className="mx-auto"
-              />
-              <div className="-translate-Y-1/2 absolute top-1/2 right-50 left-50 flex transform justify-between">
-                <a
-                  href={`#${index - 1}`}
-                  className="text-2xl font-semibold"
-                >{`<`}</a>
-                <a
-                  href={`#${index + 1}`}
-                  className="text-2xl font-semibold"
-                >{`>`}</a>
+        </section>
+
+        {/* Galerie d'images */}
+        <section className="mb-16 px-4 sm:px-0">
+          <h2 className="border-primary mb-6 border-b-2 pb-1 text-center text-2xl font-semibold">
+            Galerie
+          </h2>
+          <div className="carousel carousel-center rounded-box space-x-6">
+            {project.images_detail.map((image, index) => (
+              <div
+                key={index}
+                className="carousel-item relative h-40 w-64 overflow-hidden rounded-lg shadow-lg"
+              >
+                <Image
+                  src={image}
+                  alt={`Capture d'écran du projet ${project.nom} - ${index + 1}`}
+                  width={256}
+                  height={160}
+                  className="h-full w-full object-cover"
+                  priority={index === 0}
+                />
               </div>
-            </div>
-          ))}
-        </div>
+            ))}
+          </div>
+        </section>
       </div>
+      <Link href="/#projets" className="mx-2 mb-4 flex justify-end underline">
+        Retour aux projets
+      </Link>
     </>
   );
 }

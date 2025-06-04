@@ -33,7 +33,7 @@ export function AboutSection() {
             alt="Photo de Alan"
             width={200}
             height={200}
-            className="border-primary h-48 w-48 rounded-full border object-cover"
+            className="border-primary-content h-48 w-48 rounded-full border object-cover"
           />
           <div className="text-base-content">
             <p className="mb-4">

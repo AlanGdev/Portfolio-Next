@@ -12,7 +12,7 @@ export function TitleAnime({ message = '' }) {
       if (i === message.length) {
         clearInterval(typing);
       }
-    }, 50);
+    }, 60);
     return () => clearInterval(typing);
   }, [message]);
 

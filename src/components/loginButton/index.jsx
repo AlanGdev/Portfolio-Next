@@ -7,7 +7,10 @@ export function LoginButton() {
   const [showModal, setShowModal] = useState(false);
   return (
     <>
-      <button className="btn btn-ghost" onClick={() => setShowModal(true)}>
+      <button
+        className="btn btn-ghost btn-disabled"
+        onClick={() => setShowModal(true)}
+      >
         Login
       </button>
       <ConnexionModal open={showModal} onClose={() => setShowModal(false)} />
