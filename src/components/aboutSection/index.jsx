@@ -19,7 +19,7 @@ export function AboutSection() {
           animate={aboutInView ? { opacity: 1, y: 0 } : {}}
           transition={{ delay: 0.3 }}
         >
-          À propos de moi - Alan Grolleau
+          À propos de moi...
         </motion.h2>
 
         <motion.div
