@@ -56,16 +56,20 @@ export function ContactSection() {
               target="_blank"
               rel="noopener noreferrer"
               className="hover:text-primary"
+              aria-label="profil github"
             >
               <FaGithub />
+              <span className="sr-only">Profil github</span>
             </a>
             <a
               href="https://www.linkedin.com/in/alan-grolleau-developpeur-web"
               target="_blank"
               rel="noopener noreferrer"
               className="hover:text-primary"
+              aria-label="profil linkedIn"
             >
               <FaLinkedin />
+              <span className="sr-only">Profil linkedIn</span>
             </a>
           </div>
         </div>
