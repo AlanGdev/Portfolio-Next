@@ -59,7 +59,7 @@ export function AboutSection() {
                 'Next.js',
                 'React',
                 'Tailwind',
-                'Bootstarp',
+                'Bootstrap',
                 'Node.js',
                 'MongoDB',
               ].map((skill) => (
