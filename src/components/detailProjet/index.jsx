@@ -141,7 +141,7 @@ export default function DetailProjet({ project }) {
               <div
                 id={`item${index}`}
                 key={index}
-                className="carousel-item relative h-52 w-full overflow-hidden rounded-lg shadow-lg sm:h-72 md:h-96"
+                className="carousel-item relative h-52 w-full overflow-hidden rounded-lg sm:h-72 md:h-96"
               >
                 <a
                   href={image}
