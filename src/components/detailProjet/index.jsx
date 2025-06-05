@@ -11,16 +11,35 @@ export default function DetailProjet({ project }) {
         {/* Titre et image principale */}
         <section className="mb-8">
           <h1 className="mb-4 text-center text-5xl font-bold">{project.nom}</h1>
-          <figure className="mx-auto w-full max-w-4xl overflow-hidden rounded-lg shadow-lg">
-            <Image
-              src={project.image}
-              width={800}
-              height={400}
-              alt={`Présentation ${project.nom}`}
-              className="h-64 w-full object-cover sm:h-96"
-              priority
-            />
-          </figure>
+          {project.lien_demo ? (
+            <a
+              href={project.lien_demo}
+              target="_blank"
+              rel="noopener noreferer"
+            >
+              <figure className="mx-auto w-full max-w-4xl overflow-hidden rounded-lg shadow-lg">
+                <Image
+                  src={project.image}
+                  width={800}
+                  height={400}
+                  alt={`Présentation ${project.nom}`}
+                  className="h-64 w-full object-cover sm:h-96"
+                  priority
+                />
+              </figure>
+            </a>
+          ) : (
+            <figure className="mx-auto w-full max-w-4xl overflow-hidden rounded-lg shadow-lg">
+              <Image
+                src={project.image}
+                width={800}
+                height={400}
+                alt={`Présentation ${project.nom}`}
+                className="h-64 w-full object-cover sm:h-96"
+                priority
+              />
+            </figure>
+          )}
         </section>
 
         {/* Description */}
@@ -119,14 +138,16 @@ export default function DetailProjet({ project }) {
                 key={index}
                 className="carousel-item relative h-40 w-64 overflow-hidden rounded-lg shadow-lg"
               >
-                <Image
-                  src={image}
-                  alt={`Capture d'écran du projet ${project.nom} - ${index + 1}`}
-                  width={256}
-                  height={160}
-                  className="h-full w-full object-cover"
-                  priority={index === 0}
-                />
+                <a href={image} target="blank" rel="noopener noreferrer">
+                  <Image
+                    src={image}
+                    alt={`Capture d'écran du projet ${project.nom} - ${index + 1}`}
+                    width={256}
+                    height={160}
+                    className="h-full w-full object-contain"
+                    priority={index === 0}
+                  />
+                </a>
               </div>
             ))}
           </div>
