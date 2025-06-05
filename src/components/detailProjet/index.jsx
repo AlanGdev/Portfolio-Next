@@ -1,13 +1,10 @@
+'use client';
 import Image from 'next/image';
 import Link from 'next/link';
+import { motion, useInView } from 'framer-motion';
+import { useRef } from 'react';
 
-export const metadata = {
-  title: 'Projets',
-  description: 'Découvrez les projets web réalisés par Alan Grolleau.',
-  keywords: 'projets web, React, Next.js, Tailwind, freelance',
-};
-
-export default function DetailProjet({ project }) {
+export function DetailProjet({ project }) {
   return (
     <>
       <Link href="/#projets" className="mx-2 underline">
@@ -16,14 +13,38 @@ export default function DetailProjet({ project }) {
       <div className="container mx-auto max-w-5xl p-6">
         {/* Titre et image principale */}
         <section className="mb-8">
-          <h1 className="mb-4 text-center text-5xl font-bold">{project.nom}</h1>
+          <motion.h1
+            initial={{ opacity: 0, x: 100 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{
+              delay: 0.3,
+              ease: 'easeInOut',
+              type: 'spring',
+              bounce: 0.2,
+              duration: 1,
+            }}
+            className="mb-4 text-center text-5xl font-bold"
+          >
+            {project.nom}
+          </motion.h1>
           {project.lien_demo ? (
             <a
               href={project.lien_demo}
               target="_blank"
               rel="noopener noreferer"
             >
-              <figure className="mx-auto w-full max-w-4xl overflow-hidden rounded-lg shadow-lg">
+              <motion.figure
+                initial={{ opacity: 0, x: -100 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{
+                  delay: 0.3,
+                  ease: 'easeInOut',
+                  type: 'spring',
+                  bounce: 0.2,
+                  duration: 1,
+                }}
+                className="mx-auto w-full max-w-4xl overflow-hidden rounded-lg shadow-lg"
+              >
                 <Image
                   src={project.image}
                   width={800}
@@ -32,10 +53,21 @@ export default function DetailProjet({ project }) {
                   className="h-64 w-full object-contain sm:h-96"
                   priority
                 />
-              </figure>
+              </motion.figure>
             </a>
           ) : (
-            <figure className="mx-auto w-full max-w-4xl overflow-hidden rounded-lg shadow-lg">
+            <motion.figure
+              initial={{ opacity: 0, x: -100 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{
+                delay: 0.3,
+                ease: 'easeInOut',
+                type: 'spring',
+                bounce: 0.2,
+                duration: 1,
+              }}
+              className="mx-auto w-full max-w-4xl overflow-hidden rounded-lg shadow-lg"
+            >
               <Image
                 src={project.image}
                 width={800}
@@ -44,21 +76,43 @@ export default function DetailProjet({ project }) {
                 className="h-64 w-full object-contain sm:h-96"
                 priority
               />
-            </figure>
+            </motion.figure>
           )}
         </section>
 
         {/* Description */}
-        <section className="mb-10 px-4 sm:px-0">
+        <motion.section
+          initial={{ opacity: 0, x: 100 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{
+            delay: 0.3,
+            ease: 'easeInOut',
+            type: 'spring',
+            bounce: 0.2,
+            duration: 1,
+          }}
+          className="mb-10 px-4 sm:px-0"
+        >
           <h2 className="border-success mb-3 border-b-2 pb-1 text-2xl font-semibold">
             Description
           </h2>
           <p className="text-lg leading-relaxed">{project.description}</p>
-        </section>
+        </motion.section>
 
         {/* Détails techniques */}
         {project.categorie && (
-          <section className="mb-10 px-4 sm:px-0">
+          <motion.section
+            className="mb-10 px-4 sm:px-0"
+            initial={{ opacity: 0, x: -100 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{
+              delay: 0.3,
+              ease: 'easeInOut',
+              type: 'spring',
+              bounce: 0.2,
+              duration: 1,
+            }}
+          >
             <h2 className="border-success mb-4 border-b-2 pb-1 text-2xl font-semibold">
               Détails techniques
             </h2>
@@ -86,11 +140,22 @@ export default function DetailProjet({ project }) {
                 ))}
               </div>
             </div>
-          </section>
+          </motion.section>
         )}
 
         {/* Problématiques développées */}
-        <section className="mb-10 px-4 sm:px-0">
+        <motion.section
+          initial={{ opacity: 0, x: 100 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{
+            delay: 0.3,
+            ease: 'easeInOut',
+            type: 'spring',
+            bounce: 0.2,
+            duration: 1,
+          }}
+          className="mb-10 px-4 sm:px-0"
+        >
           <div
             tabIndex={0}
             className="collapse-arrow border-base-300 bg-base-200 rounded-box collapse border"
@@ -107,12 +172,21 @@ export default function DetailProjet({ project }) {
               </ul>
             </div>
           </div>
-        </section>
+        </motion.section>
 
         {/* Liens GitHub et Demo */}
         <section className="mb-12 flex flex-wrap justify-center gap-6 px-4 sm:px-0">
           {project.lien_github && (
-            <a
+            <motion.a
+              initial={{ opacity: 0, x: -100 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{
+                delay: 0.3,
+                ease: 'easeInOut',
+                type: 'spring',
+                bounce: 0.2,
+                duration: 1,
+              }}
               href={project.lien_github}
               target="_blank"
               rel="noopener noreferrer"
@@ -121,10 +195,19 @@ export default function DetailProjet({ project }) {
               {project.nom === 'Menu Maker by Qwenta'
                 ? 'Voir la présentation'
                 : 'Voir le code sur GitHub'}
-            </a>
+            </motion.a>
           )}
           {project.lien_demo && (
-            <a
+            <motion.a
+              initial={{ opacity: 0, x: 100 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{
+                delay: 0.3,
+                ease: 'easeInOut',
+                type: 'spring',
+                bounce: 0.2,
+                duration: 1,
+              }}
               href={project.lien_demo}
               target="_blank"
               rel="noopener noreferrer"
@@ -133,7 +216,7 @@ export default function DetailProjet({ project }) {
               {project.nom === 'Menu Maker by Qwenta'
                 ? 'Voir les spéc. techniques'
                 : 'Voir la démo'}
-            </a>
+            </motion.a>
           )}
         </section>
 
@@ -149,7 +232,16 @@ export default function DetailProjet({ project }) {
                 key={index}
                 className="carousel-item relative h-52 w-full overflow-hidden rounded-lg sm:h-72 md:h-96"
               >
-                <a
+                <motion.a
+                  initial={{ opacity: 0, y: 100 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{
+                    delay: 0.3,
+                    ease: 'easeInOut',
+                    type: 'spring',
+                    bounce: 0.2,
+                    duration: 1,
+                  }}
                   href={image}
                   target="blank"
                   rel="noopener noreferrer"
@@ -163,7 +255,7 @@ export default function DetailProjet({ project }) {
                     className="h-full w-full object-contain"
                     priority={index === 0}
                   />
-                </a>
+                </motion.a>
               </div>
             ))}
           </div>

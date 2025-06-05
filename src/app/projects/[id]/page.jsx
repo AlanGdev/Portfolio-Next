@@ -1,4 +1,10 @@
-import DetailProjet from '@/components/detailProjet';
+import { DetailProjet } from '@/components/detailProjet';
+
+export const metadata = {
+  title: 'Projets',
+  description: 'Découvrez les projets web réalisés par Alan Grolleau.',
+  keywords: 'projets web, React, Next.js, Tailwind, freelance',
+};
 
 export default async function Projet({ params }) {
   const { id } = params;
