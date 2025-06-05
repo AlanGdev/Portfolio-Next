@@ -7,10 +7,10 @@ import { useRef } from 'react';
 export function DetailProjet({ project }) {
   return (
     <>
-      <Link href="/#projets" className="mx-2 underline">
+      <Link href="/#projets" className="mx-4 my-4 p-4 underline">
         Retour aux projets
       </Link>
-      <div className="container mx-auto max-w-5xl p-6">
+      <div className="container mx-auto my-4 max-w-5xl p-6">
         {/* Titre et image principale */}
         <section className="mb-8">
           <motion.h1
@@ -270,7 +270,10 @@ export function DetailProjet({ project }) {
           </div>
         </section>
       </div>
-      <Link href="/#projets" className="mx-2 mb-4 flex justify-end underline">
+      <Link
+        href="/#projets"
+        className="mx-4 mb-4 flex justify-end p-4 underline"
+      >
         Retour aux projets
       </Link>
     </>
