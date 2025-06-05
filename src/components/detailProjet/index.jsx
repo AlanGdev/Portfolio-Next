@@ -23,7 +23,7 @@ export default function DetailProjet({ project }) {
                   width={800}
                   height={400}
                   alt={`Présentation ${project.nom}`}
-                  className="h-64 w-full object-cover sm:h-96"
+                  className="h-64 w-full object-contain sm:h-96"
                   priority
                 />
               </figure>
@@ -35,7 +35,7 @@ export default function DetailProjet({ project }) {
                 width={800}
                 height={400}
                 alt={`Présentation ${project.nom}`}
-                className="h-64 w-full object-cover sm:h-96"
+                className="h-64 w-full object-contain sm:h-96"
                 priority
               />
             </figure>
