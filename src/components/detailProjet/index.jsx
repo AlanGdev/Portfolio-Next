@@ -1,13 +1,11 @@
 import Image from 'next/image';
 import Link from 'next/link';
+//import { motion, useInView } from 'framer-motion';
+//import { useRef } from 'react';
 
-export const metadata = {
-  title: 'Projets',
-  description: 'Découvrez les projets web réalisés par Alan Grolleau.',
-  keywords: 'projets web, React, Next.js, Tailwind, freelance',
-};
-
-export default function DetailProjet({ project }) {
+export function DetailProjet({ project }) {
+  //const projectRef = useRef(null);
+  //const projectInView = useInView({ projectRef });
   return (
     <>
       <Link href="/#projets" className="mx-2 underline">
