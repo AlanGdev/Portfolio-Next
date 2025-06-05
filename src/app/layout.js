@@ -13,9 +13,11 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: 'Développeur Web Freelance - Alan Grolleau',
-  description:
-    'Applications web sur mesure, sites vitrine, optimisation SEO, et développement bacl-end. Contactez Alan Grolleau pour vos projets web.',
+  title: {
+    default: 'Alan Grolleau',
+    template: '%s | Alan Grolleau',
+  },
+  description: 'Développeur web freelance en Bretagne, spécialisé en Next.js.',
 };
 
 export default function RootLayout({ children }) {
