@@ -16,7 +16,13 @@ export function DetailProjet({ project }) {
           <motion.h1
             initial={{ opacity: 0, x: 100 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: 0.8 }}
+            transition={{
+              delay: 0.3,
+              ease: 'easeInOut',
+              type: 'spring',
+              bounce: 0.2,
+              duration: 1,
+            }}
             className="mb-4 text-center text-5xl font-bold"
           >
             {project.nom}
@@ -30,7 +36,13 @@ export function DetailProjet({ project }) {
               <motion.figure
                 initial={{ opacity: 0, x: -100 }}
                 animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: 0.8 }}
+                transition={{
+                  delay: 0.3,
+                  ease: 'easeInOut',
+                  type: 'spring',
+                  bounce: 0.2,
+                  duration: 1,
+                }}
                 className="mx-auto w-full max-w-4xl overflow-hidden rounded-lg shadow-lg"
               >
                 <Image
@@ -47,7 +59,13 @@ export function DetailProjet({ project }) {
             <motion.figure
               initial={{ opacity: 0, x: -100 }}
               animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.8 }}
+              transition={{
+                delay: 0.3,
+                ease: 'easeInOut',
+                type: 'spring',
+                bounce: 0.2,
+                duration: 1,
+              }}
               className="mx-auto w-full max-w-4xl overflow-hidden rounded-lg shadow-lg"
             >
               <Image
@@ -66,7 +84,13 @@ export function DetailProjet({ project }) {
         <motion.section
           initial={{ opacity: 0, x: 100 }}
           animate={{ opacity: 1, x: 0 }}
-          transition={{ delay: 0.8 }}
+          transition={{
+            delay: 0.3,
+            ease: 'easeInOut',
+            type: 'spring',
+            bounce: 0.2,
+            duration: 1,
+          }}
           className="mb-10 px-4 sm:px-0"
         >
           <h2 className="border-primary mb-3 border-b-2 pb-1 text-2xl font-semibold">
@@ -80,7 +104,13 @@ export function DetailProjet({ project }) {
           <motion.section
             initial={{ opacity: 0, x: -100 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: 0.8 }}
+            transition={{
+              delay: 0.3,
+              ease: 'easeInOut',
+              type: 'spring',
+              bounce: 0.2,
+              duration: 1,
+            }}
             className="mb-10 px-4 sm:px-0"
           >
             <h2 className="border-primary mb-4 border-b-2 pb-1 text-2xl font-semibold">
@@ -117,7 +147,13 @@ export function DetailProjet({ project }) {
         <motion.section
           initial={{ opacity: 0, x: 100 }}
           animate={{ opacity: 1, x: 0 }}
-          transition={{ delay: 0.8 }}
+          transition={{
+            delay: 0.3,
+            ease: 'easeInOut',
+            type: 'spring',
+            bounce: 0.2,
+            duration: 1,
+          }}
           className="mb-10 px-4 sm:px-0"
         >
           <div
@@ -144,7 +180,13 @@ export function DetailProjet({ project }) {
             <motion.a
               initial={{ opacity: 0, x: -100 }}
               animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.8 }}
+              transition={{
+                delay: 0.3,
+                ease: 'easeInOut',
+                type: 'spring',
+                bounce: 0.2,
+                duration: 1,
+              }}
               href={project.lien_github}
               target="_blank"
               rel="noopener noreferrer"
@@ -159,7 +201,13 @@ export function DetailProjet({ project }) {
             <motion.a
               initial={{ opacity: 0, x: 100 }}
               animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.8 }}
+              transition={{
+                delay: 0.3,
+                ease: 'easeInOut',
+                type: 'spring',
+                bounce: 0.2,
+                duration: 1,
+              }}
               href={project.lien_demo}
               target="_blank"
               rel="noopener noreferrer"
@@ -187,7 +235,13 @@ export function DetailProjet({ project }) {
                 <motion.a
                   initial={{ opacity: 0, y: 100 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.8 }}
+                  transition={{
+                    delay: 0.3,
+                    ease: 'easeInOut',
+                    type: 'spring',
+                    bounce: 0.2,
+                    duration: 1,
+                  }}
                   href={image}
                   target="blank"
                   rel="noopener noreferrer"
