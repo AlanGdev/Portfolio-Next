@@ -11,16 +11,35 @@ export default function DetailProjet({ project }) {
         {/* Titre et image principale */}
         <section className="mb-8">
           <h1 className="mb-4 text-center text-5xl font-bold">{project.nom}</h1>
-          <figure className="mx-auto w-full max-w-4xl overflow-hidden rounded-lg shadow-lg">
-            <Image
-              src={project.image}
-              width={800}
-              height={400}
-              alt={`Présentation ${project.nom}`}
-              className="h-64 w-full object-cover sm:h-96"
-              priority
-            />
-          </figure>
+          {project.lien_demo ? (
+            <a
+              href={project.lien_demo}
+              target="_blank"
+              rel="noopener noreferer"
+            >
+              <figure className="mx-auto w-full max-w-4xl overflow-hidden rounded-lg shadow-lg">
+                <Image
+                  src={project.image}
+                  width={800}
+                  height={400}
+                  alt={`Présentation ${project.nom}`}
+                  className="h-64 w-full object-contain sm:h-96"
+                  priority
+                />
+              </figure>
+            </a>
+          ) : (
+            <figure className="mx-auto w-full max-w-4xl overflow-hidden rounded-lg shadow-lg">
+              <Image
+                src={project.image}
+                width={800}
+                height={400}
+                alt={`Présentation ${project.nom}`}
+                className="h-64 w-full object-contain sm:h-96"
+                priority
+              />
+            </figure>
+          )}
         </section>
 
         {/* Description */}
@@ -93,7 +112,9 @@ export default function DetailProjet({ project }) {
               rel="noopener noreferrer"
               className="btn btn-outline btn-primary"
             >
-              Voir le code sur GitHub
+              {project.nom === 'Menu Maker by Qwenta'
+                ? 'Voir la présentation'
+                : 'Voir le code sur GitHub'}
             </a>
           )}
           {project.lien_demo && (
@@ -103,7 +124,9 @@ export default function DetailProjet({ project }) {
               rel="noopener noreferrer"
               className="btn btn-primary"
             >
-              Voir la démo
+              {project.nom === 'Menu Maker by Qwenta'
+                ? 'Voir les spéc. techniques'
+                : 'Voir la démo'}
             </a>
           )}
         </section>
@@ -113,22 +136,39 @@ export default function DetailProjet({ project }) {
           <h2 className="border-primary mb-6 border-b-2 pb-1 text-center text-2xl font-semibold">
             Galerie
           </h2>
-          <div className="carousel carousel-center rounded-box space-x-6">
+          <div className="carousel carousel-start rounded-box max-w-full space-x-2">
             {project.images_detail.map((image, index) => (
               <div
+                id={`item${index}`}
                 key={index}
-                className="carousel-item relative h-40 w-64 overflow-hidden rounded-lg shadow-lg"
+                className="carousel-item relative h-52 w-full overflow-hidden rounded-lg shadow-lg sm:h-72 md:h-96"
               >
-                <Image
-                  src={image}
-                  alt={`Capture d'écran du projet ${project.nom} - ${index + 1}`}
-                  width={256}
-                  height={160}
-                  className="h-full w-full object-cover"
-                  priority={index === 0}
-                />
+                <a
+                  href={image}
+                  target="blank"
+                  rel="noopener noreferrer"
+                  className="flex flex-1 justify-center"
+                >
+                  <Image
+                    src={image}
+                    alt={`Capture d'écran du projet ${project.nom} - ${index + 1}`}
+                    width={256}
+                    height={160}
+                    className="h-full w-full object-contain"
+                    priority={index === 0}
+                  />
+                </a>
               </div>
             ))}
+          </div>
+          <div className="flex w-full justify-center gap-2 py-2">
+            {project.images_detail.map((image, index) => {
+              return (
+                <a key={index} href={`#item${index}`} className="btn btn-xs">
+                  {index + 1}
+                </a>
+              );
+            })}
           </div>
         </section>
       </div>
