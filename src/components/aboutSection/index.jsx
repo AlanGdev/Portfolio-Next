@@ -65,7 +65,7 @@ export function AboutSection() {
               ].map((skill) => (
                 <span
                   key={skill}
-                  className="badge badge-outline border-primary text-primary"
+                  className="badge badge-outline border-info text-info"
                 >
                   {skill}
                 </span>
