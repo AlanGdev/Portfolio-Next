@@ -1,6 +1,12 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
+export const metadata = {
+  title: 'Projets',
+  description: 'Découvrez les projets web réalisés par Alan Grolleau.',
+  keywords: 'projets web, React, Next.js, Tailwind, freelance',
+};
+
 export default function DetailProjet({ project }) {
   return (
     <>
@@ -136,7 +142,7 @@ export default function DetailProjet({ project }) {
           <h2 className="border-primary mb-6 border-b-2 pb-1 text-center text-2xl font-semibold">
             Galerie
           </h2>
-          <div className="carousel carousel-start rounded-box max-w-full space-x-2">
+          <div className="carousel carousel-start rounded-box w-full space-x-2">
             {project.images_detail.map((image, index) => (
               <div
                 id={`item${index}`}
