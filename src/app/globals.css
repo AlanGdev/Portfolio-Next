@@ -2,5 +2,5 @@
 @plugin "daisyui" {
   themes:
     lemonade --default,
-    dracula --prefersdark;
+    business --prefersdark;
 }

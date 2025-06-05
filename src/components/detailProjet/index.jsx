@@ -93,7 +93,7 @@ export function DetailProjet({ project }) {
           }}
           className="mb-10 px-4 sm:px-0"
         >
-          <h2 className="border-primary mb-3 border-b-2 pb-1 text-2xl font-semibold">
+          <h2 className="border-success mb-3 border-b-2 pb-1 text-2xl font-semibold">
             Description
           </h2>
           <p className="text-lg leading-relaxed">{project.description}</p>
@@ -113,7 +113,7 @@ export function DetailProjet({ project }) {
               duration: 1,
             }}
           >
-            <h2 className="border-primary mb-4 border-b-2 pb-1 text-2xl font-semibold">
+            <h2 className="border-success mb-4 border-b-2 pb-1 text-2xl font-semibold">
               Détails techniques
             </h2>
             <div className="flex flex-col gap-6 sm:flex-row sm:items-center">

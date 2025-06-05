@@ -71,7 +71,7 @@ exports.createProject = async (req, res) => {
 export async function getProjects() {
   await dbConnect();
   try {
-    const projects = await Project.find();
+    const projects = await Project.find().populate('technologies');
     return projects;
   } catch (error) {
     throw new Error('Erreur lors de la récupération des projets');
