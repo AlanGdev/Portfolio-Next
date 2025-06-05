@@ -102,6 +102,7 @@ export function DetailProjet({ project }) {
         {/* Détails techniques */}
         {project.categorie && (
           <motion.section
+            className="mb-10 px-4 sm:px-0"
             initial={{ opacity: 0, x: -100 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{
@@ -111,7 +112,6 @@ export function DetailProjet({ project }) {
               bounce: 0.2,
               duration: 1,
             }}
-            className="mb-10 px-4 sm:px-0"
           >
             <h2 className="border-primary mb-4 border-b-2 pb-1 text-2xl font-semibold">
               Détails techniques
@@ -161,11 +161,11 @@ export function DetailProjet({ project }) {
             className="collapse-arrow border-base-300 bg-base-200 rounded-box collapse border"
           >
             <input type="checkbox" className="peer" />
-            <div className="collapse-title peer-checked:bg-primary peer-checked:text-primary-content cursor-pointer text-xl font-semibold">
+            <div className="collapse-title peer-checked:bg-success peer-checked:text-primary-content cursor-pointer text-xl font-semibold">
               Problématiques développées
             </div>
             <div className="collapse-content text-base-content">
-              <ul className="list-inside list-disc space-y-2">
+              <ul className="list-inside list-disc space-y-2 p-4">
                 {project.problematics.map((prob, index) => (
                   <li key={index}>{prob}</li>
                 ))}
@@ -190,7 +190,7 @@ export function DetailProjet({ project }) {
               href={project.lien_github}
               target="_blank"
               rel="noopener noreferrer"
-              className="btn btn-outline btn-primary"
+              className="btn btn-outline btn-success"
             >
               {project.nom === 'Menu Maker by Qwenta'
                 ? 'Voir la présentation'
@@ -211,7 +211,7 @@ export function DetailProjet({ project }) {
               href={project.lien_demo}
               target="_blank"
               rel="noopener noreferrer"
-              className="btn btn-primary"
+              className="btn btn-success"
             >
               {project.nom === 'Menu Maker by Qwenta'
                 ? 'Voir les spéc. techniques'
@@ -222,7 +222,7 @@ export function DetailProjet({ project }) {
 
         {/* Galerie d'images */}
         <section className="mb-16 px-4 sm:px-0">
-          <h2 className="border-primary mb-6 border-b-2 pb-1 text-center text-2xl font-semibold">
+          <h2 className="border-success mb-6 border-b-2 pb-1 text-center text-2xl font-semibold">
             Galerie
           </h2>
           <div className="carousel carousel-start rounded-box w-full space-x-2">
