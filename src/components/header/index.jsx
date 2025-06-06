@@ -8,7 +8,12 @@ export default function Header() {
       <nav className="navbar bg-base-200 mb-4 shadow-sm">
         <div className="navbar-start">
           <div className="dropdown">
-            <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
+            <div
+              tabIndex={0}
+              aria-label="Menu burger"
+              role="button"
+              className="btn btn-ghost lg:hidden"
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-5 w-5"
@@ -40,16 +45,6 @@ export default function Header() {
               </li>
               <li>
                 <Link href="/#contact">Contact</Link>
-              </li>
-              <li>
-                <details>
-                  <summary>Admin</summary>
-                  <ul className="bg-base-200 rounded-t-none p-2">
-                    <li>
-                      <LoginButton />
-                    </li>
-                  </ul>
-                </details>
               </li>
             </ul>
           </div>

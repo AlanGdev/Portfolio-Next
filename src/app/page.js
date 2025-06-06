@@ -6,23 +6,42 @@ import { ContactSection } from '@/components/contactSection';
 export const metadata = {
   title: 'Alan Grolleau | Développeur Web Freelance',
   description:
-    'Accueil du portfolio d’Alan Grolleau, spécialiste React/Next.js. Prenez contact avec Alan Grolleau pour vos projets de développement web.',
-  keywords: 'portfolio, freelance, développeur web, Alan Grolleau',
+    'Création de sites performants avec Next.js et SEO optimisé. Contactez Alan Grolleau pour vos projets.',
+  keywords: [
+    'portfolio',
+    'freelance',
+    'développeur web',
+    'Next.js',
+    'SEO',
+    'Vannes',
+    'Remote',
+  ],
+  authors: [{ name: 'Alan Grolleau' }],
+  creator: 'Alan Grolleau',
   openGraph: {
     title: 'Alan Grolleau | Développeur Web',
-    description: 'Création de sites performants avec Next.js et SEO optimisé.',
-    url: 'https://alangrolleau-developpeurweb-portfol.vercel.app',
+    description:
+      'Création de sites et applications web performants avec Next.js et SEO optimisé.',
+    url: 'https://alangrolleau-developpeurweb-portfolio.vercel.app',
     siteName: 'Alan Grolleau | Portfolio',
-    images: [
-      {
-        url: '/og-image.png', // 1200x630 recommandé
-        width: 1200,
-        height: 630,
-        alt: 'Image d’aperçu du site',
-      },
-    ],
     locale: 'fr_FR',
     type: 'website',
+    images: [
+      {
+        url: 'https://alangrolleau-developpeurweb-portfolio.vercel.app/og-image.png',
+        width: 1200,
+        height: 630,
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Alan Grolleau | Développeur Web',
+    description:
+      'Création de sites et applications web performants avec Next.js et SEO optimisé.',
+    images: [
+      'https://alangrolleau-developpeurweb-portfolio.vercel.app/og-image.png',
+    ],
   },
 };
 

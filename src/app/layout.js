@@ -1,6 +1,7 @@
 import { Geist, Geist_Mono } from 'next/font/google';
 import './globals.css';
 import Header from '@/components/header';
+import Head from 'next/head';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -23,6 +24,40 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="fr">
+      <Head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'Person',
+              name: 'Alan Grolleau',
+              jobTitle: 'Développeur Web Freelance',
+              url: 'https://alangrolleau-developpeurweb-portfol.vercel.app',
+              image:
+                'https://alangrolleau-developpeurweb-portfol.vercel.app/og-image.png',
+              address: {
+                '@type': 'PostalAddress',
+                addressLocality: 'Theix-Noyalo',
+                addressRegion: 'Bretagne',
+                postalCode: '56450',
+                addressCountry: 'FR',
+              },
+              contactPoint: {
+                '@type': 'ContactPoint',
+                telephone: '+33-6-87-19-02-92',
+                contactType: 'service client',
+                areaServed: 'FR',
+                availableLanguage: ['fr'],
+              },
+              sameAs: [
+                'https://www.linkedin.com/in/alan-grolleau',
+                'https://github.com/alangrolleau',
+              ],
+            }),
+          }}
+        />
+      </Head>
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
         <Header />
         <main className="bg-base-100 text-base-content">{children}</main>

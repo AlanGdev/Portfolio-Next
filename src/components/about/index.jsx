@@ -101,7 +101,16 @@ export function About({ skills, technos }) {
                 key={index}
                 className="collapse-plus bg-base-200 border-base-300 collapse border"
               >
-                <input type="radio" name="my-accordion-3" />
+                <label
+                  htmlFor={`catégorie ${skill.categorie}`}
+                  className="sr-only"
+                ></label>
+                <input
+                  id={`catégorie ${skill.categorie}`}
+                  type="radio"
+                  name="my-accordion-3"
+                  aria-label={`catégorie ${skill.categorie}`}
+                />
                 <div className="collapse-title font-semibold">
                   {skill.categorie}
                 </div>

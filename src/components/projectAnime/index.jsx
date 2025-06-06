@@ -56,8 +56,8 @@ export function ProjectAnime({ projects }) {
                         <Image
                           key={index}
                           src={technologie.image}
-                          width={20}
-                          height={30}
+                          width={32}
+                          height={17}
                           alt={`${technologie.nom}`}
                           className="object-center hover:scale-120"
                           title={technologie.nom}
