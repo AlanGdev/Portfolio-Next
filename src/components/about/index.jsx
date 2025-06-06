@@ -39,7 +39,7 @@ export function About({ skills, technos }) {
             alt="Photo de Alan"
             width={200}
             height={200}
-            className="border-primary-content h-48 w-48 rounded-full border object-cover"
+            className="border-primary-content h-36 w-36 rounded-full border object-cover brightness-200 contrast-100 hue-rotate-60 filter"
           />
           <div className="text-base-content">
             <p className="mb-4">
@@ -85,46 +85,49 @@ export function About({ skills, technos }) {
           </div>
         </motion.div>
         <div className="flex flex-col gap-2 p-4">
-          {skills.map((skill, index) => (
-            <motion.div
-              ref={skillRef}
-              initial={{ opacity: 0, y: 100 }}
-              animate={aboutInView ? { opacity: 1, y: 0 } : {}}
-              transition={{
-                delay: 0.5 + index / 4,
-                ease: 'easeInOut',
-                type: 'spring',
-                bounce: 0.2,
-                duration: 1,
-              }}
-              key={index}
-              className="collapse-plus bg-base-200 border-base-300 collapse border"
-            >
-              <input type="radio" name="my-accordion-3" />
-              <div className="collapse-title font-semibold">
-                {skill.categorie}
-              </div>
-              <div className="collapse-content text-sm">
-                <ul>
-                  {skill.skills.map((skill, index) => (
-                    <li key={index}>{skill}</li>
-                  ))}
-                </ul>
-                <div className="flex flex-wrap gap-2 p-2">
-                  <p className="font-semibold">Projets associés:</p>
-                  <ul>
-                    {skill.projets.map((projet, index) => (
-                      <Link key={index} href={`/projects/${projet._id}`}>
-                        <li className="text-info font-stretch-200% underline">
-                          {projet.nom}
-                        </li>
-                      </Link>
-                    ))}
-                  </ul>
+          {Array.isArray(skills) &&
+            skills.map((skill, index) => (
+              <motion.div
+                ref={skillRef}
+                initial={{ opacity: 0, y: 100 }}
+                animate={aboutInView ? { opacity: 1, y: 0 } : {}}
+                transition={{
+                  delay: 0.5 + index / 4,
+                  ease: 'easeInOut',
+                  type: 'spring',
+                  bounce: 0.2,
+                  duration: 1,
+                }}
+                key={index}
+                className="collapse-plus bg-base-200 border-base-300 collapse border"
+              >
+                <input type="radio" name="my-accordion-3" />
+                <div className="collapse-title font-semibold">
+                  {skill.categorie}
                 </div>
-              </div>
-            </motion.div>
-          ))}
+                <div className="collapse-content text-sm">
+                  <ul>
+                    {Array.isArray(skill.skills) &&
+                      skill.skills.map((skill, index) => (
+                        <li key={index}>{skill}</li>
+                      ))}
+                  </ul>
+                  <div className="flex flex-wrap gap-2 p-2">
+                    <p className="font-semibold">Projets associés:</p>
+                    <ul>
+                      {Array.isArray(skill.projets) &&
+                        skill.projets.map((projet, index) => (
+                          <Link key={index} href={`/projects/${projet._id}`}>
+                            <li className="text-info font-stretch-200% underline">
+                              {projet.nom}
+                            </li>
+                          </Link>
+                        ))}
+                    </ul>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
         </div>
       </div>
     </section>

@@ -123,21 +123,22 @@ export function DetailProjet({ project }) {
               </p>
               <div className="flex flex-wrap items-center gap-4">
                 <span className="text-lg font-bold">Technologies:</span>
-                {project.technologies.map((tech) => (
-                  <div
-                    key={tech._id}
-                    className="tooltip tooltip-bottom"
-                    data-tip={tech.nom}
-                  >
-                    <Image
-                      src={tech.image}
-                      width={48}
-                      height={48}
-                      alt={tech.nom}
-                      className="rounded-md border border-gray-300"
-                    />
-                  </div>
-                ))}
+                {Array.isArray(project.technologies) &&
+                  project.technologies.map((tech) => (
+                    <div
+                      key={tech._id}
+                      className="tooltip tooltip-bottom"
+                      data-tip={tech.nom}
+                    >
+                      <Image
+                        src={tech.image}
+                        width={48}
+                        height={48}
+                        alt={tech.nom}
+                        className="rounded-md border border-gray-300"
+                      />
+                    </div>
+                  ))}
               </div>
             </div>
           </motion.section>
@@ -166,9 +167,10 @@ export function DetailProjet({ project }) {
             </div>
             <div className="collapse-content text-base-content">
               <ul className="list-inside list-disc space-y-2 p-4">
-                {project.problematics.map((prob, index) => (
-                  <li key={index}>{prob}</li>
-                ))}
+                {Array.isArray(project.problematics) &&
+                  project.problematics.map((prob, index) => (
+                    <li key={index}>{prob}</li>
+                  ))}
               </ul>
             </div>
           </div>
@@ -226,47 +228,49 @@ export function DetailProjet({ project }) {
             Galerie
           </h2>
           <div className="carousel carousel-start rounded-box w-full space-x-2">
-            {project.images_detail.map((image, index) => (
-              <div
-                id={`item${index}`}
-                key={index}
-                className="carousel-item relative h-52 w-full overflow-hidden rounded-lg sm:h-72 md:h-96"
-              >
-                <motion.a
-                  initial={{ opacity: 0, y: 100 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{
-                    delay: 0.3,
-                    ease: 'easeInOut',
-                    type: 'spring',
-                    bounce: 0.2,
-                    duration: 1,
-                  }}
-                  href={image}
-                  target="blank"
-                  rel="noopener noreferrer"
-                  className="flex flex-1 justify-center"
+            {Array.isArray(project.images_detail) &&
+              project.images_detail.map((image, index) => (
+                <div
+                  id={`item${index}`}
+                  key={index}
+                  className="carousel-item relative h-52 w-full overflow-hidden rounded-lg sm:h-72 md:h-96"
                 >
-                  <Image
-                    src={image}
-                    alt={`Capture d'écran du projet ${project.nom} - ${index + 1}`}
-                    width={256}
-                    height={160}
-                    className="h-full w-full object-contain"
-                    priority={index === 0}
-                  />
-                </motion.a>
-              </div>
-            ))}
+                  <motion.a
+                    initial={{ opacity: 0, y: 100 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{
+                      delay: 0.3,
+                      ease: 'easeInOut',
+                      type: 'spring',
+                      bounce: 0.2,
+                      duration: 1,
+                    }}
+                    href={image}
+                    target="blank"
+                    rel="noopener noreferrer"
+                    className="flex flex-1 justify-center"
+                  >
+                    <Image
+                      src={image}
+                      alt={`Capture d'écran du projet ${project.nom} - ${index + 1}`}
+                      width={256}
+                      height={160}
+                      className="h-full w-full object-contain"
+                      priority={index === 0}
+                    />
+                  </motion.a>
+                </div>
+              ))}
           </div>
           <div className="flex w-full justify-center gap-2 py-2">
-            {project.images_detail.map((image, index) => {
-              return (
-                <a key={index} href={`#item${index}`} className="btn btn-xs">
-                  {index + 1}
-                </a>
-              );
-            })}
+            {Array.isArray(project.images_detail) &&
+              project.images_detail.map((image, index) => {
+                return (
+                  <a key={index} href={`#item${index}`} className="btn btn-xs">
+                    {index + 1}
+                  </a>
+                );
+              })}
           </div>
         </section>
       </div>
