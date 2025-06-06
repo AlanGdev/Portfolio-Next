@@ -17,7 +17,12 @@ export function ProjectAnime({ projects }) {
       {' '}
       {Array.isArray(projects) &&
         projects.map((project, index) => (
-          <Link key={index} href={`/projects/${project._id}`} className="flex">
+          <Link
+            key={index}
+            aria-label={`Voir le projet ${project.nom}`}
+            href={`/projects/${project._id}`}
+            className="flex"
+          >
             <motion.div
               className="bg-base-300 w-full rounded-xl p-6 shadow-lg transition-transform duration-300 ease-out hover:scale-105"
               initial={{ opacity: 0, y: 200, scale: 0 }}

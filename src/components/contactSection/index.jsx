@@ -62,8 +62,12 @@ export function ContactSection() {
             onSubmit={handleSubmit(onSubmit)}
           >
             <div>
+              <label htmlFor="nom" className="sr-only">
+                Nom
+              </label>
               <input
                 {...register('nom', { required: 'Le nom est requis' })}
+                id="nom"
                 placeholder="Nom"
                 className="input input-bordered bg-base-100 text-base-content w-full focus:outline-none"
               />
@@ -73,7 +77,11 @@ export function ContactSection() {
             </div>
 
             <div>
+              <label htmlFor="email" className="sr-only">
+                Adresse email
+              </label>
               <input
+                id="email"
                 type="email"
                 {...register('email', {
                   required: "L'adresse email est requise",
@@ -87,7 +95,11 @@ export function ContactSection() {
             </div>
 
             <div>
+              <label htmlFor="message" className="sr-only">
+                Message
+              </label>
               <textarea
+                id="message"
                 {...register('message', {
                   required: 'Le message est requis',
                 })}
