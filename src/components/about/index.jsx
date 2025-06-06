@@ -10,7 +10,7 @@ export function About({ skills, technos }) {
   const aboutInView = useInView(aboutRef, { once: true });
 
   const skillRef = useRef(null);
-  const skillInView = useInView(skillRef, { once: true });
+  const skillInView = useInView(skillRef, { once: false });
 
   return (
     <section
@@ -90,9 +90,9 @@ export function About({ skills, technos }) {
               <motion.div
                 ref={skillRef}
                 initial={{ opacity: 0, y: 100 }}
-                animate={aboutInView ? { opacity: 1, y: 0 } : {}}
+                animate={skillInView ? { opacity: 1, y: 0 } : {}}
                 transition={{
-                  delay: 0.5 + index / 4,
+                  delay: index / 4,
                   ease: 'easeInOut',
                   type: 'spring',
                   bounce: 0.2,

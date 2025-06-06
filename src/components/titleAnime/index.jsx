@@ -22,7 +22,7 @@ export function TitleAnime({ message = '' }) {
       className="mb-4 min-h-[96px] text-4xl font-bold sm:text-6xl"
     >
       {text || message}
-      <span className="border-base-content ml-1 animate-pulse border-r-2" />
+      <span className="border-base-content ml-1 animate-pulse border-r-3" />
     </h1>
   );
 }

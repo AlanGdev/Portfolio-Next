@@ -30,6 +30,7 @@ export function ThemeSwitcher() {
           value="business"
           onChange={handleChange}
           checked={theme}
+          aria-label={theme ? 'Passer en mode clair' : 'Passer en mode sombre'}
         />
         <FaMoon className="swap-off h-6 w-6" />
         <FaSun className="swap-on h-6 w-6" />
