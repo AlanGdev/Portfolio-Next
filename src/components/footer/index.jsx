@@ -56,6 +56,7 @@ export default function Footer() {
             <a
               href="https://github.com/AlanGdev"
               target="_blank"
+              aria-label="lient github"
               rel="noopener noreferrer"
               className="link"
             >
@@ -66,6 +67,7 @@ export default function Footer() {
             <a
               href="www.linkedin.com/in/alan-grolleau-developpeur-web"
               target="_blank"
+              aria-label="lien linkedin"
               rel="noopener noreferrer"
               className="link"
             >

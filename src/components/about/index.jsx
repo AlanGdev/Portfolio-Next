@@ -9,8 +9,8 @@ export function About({ skills }) {
   const aboutRef = useRef(null);
   const aboutInView = useInView(aboutRef, { once: true });
 
-  const skillRef = useRef(null);
-  const skillInView = useInView(skillRef, { once: false });
+  //const skillRef = useRef(null);
+  //const skillInView = useInView(skillRef, { once: false });
 
   return (
     <section
