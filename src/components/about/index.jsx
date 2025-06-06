@@ -9,8 +9,8 @@ export function About({ skills }) {
   const aboutRef = useRef(null);
   const aboutInView = useInView(aboutRef, { once: true });
 
-  //const skillRef = useRef(null);
-  //const skillInView = useInView(skillRef, { once: false });
+  const skillRef = useRef(null);
+  const skillInView = useInView(skillRef, { once: false });
 
   return (
     <section
@@ -82,8 +82,6 @@ export function About({ skills }) {
         <div className="flex flex-col gap-2 p-4">
           {Array.isArray(skills) &&
             skills.map((skill, index) => {
-              const skillRef = useRef(null);
-              const skillInView = useInView(skillRef, { once: false });
               return (
                 <motion.div
                   ref={skillRef}
