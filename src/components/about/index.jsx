@@ -77,66 +77,65 @@ export function About({ skills, technos }) {
                 </span>
               ))}
             </div>
-            {/*<div className="flex flex-wrap gap-2">
-              {technos.map((techno, index) => (
-                <span key={index}>{techno.nom}</span>
-              ))}
-            </div>*/}
           </div>
         </motion.div>
         <div className="flex flex-col gap-2 p-4">
           {Array.isArray(skills) &&
-            skills.map((skill, index) => (
-              <motion.div
-                ref={skillRef}
-                initial={{ opacity: 0, y: 100 }}
-                animate={skillInView ? { opacity: 1, y: 0 } : {}}
-                transition={{
-                  delay: index / 4,
-                  ease: 'easeInOut',
-                  type: 'spring',
-                  bounce: 0.2,
-                  duration: 1,
-                }}
-                key={index}
-                className="collapse-plus bg-base-200 border-base-300 collapse border"
-              >
-                <label
-                  htmlFor={`catégorie ${skill.categorie}`}
-                  className="sr-only"
-                ></label>
-                <input
-                  id={`catégorie ${skill.categorie}`}
-                  type="radio"
-                  name="my-accordion-3"
-                  aria-label={`catégorie ${skill.categorie}`}
-                />
-                <div className="collapse-title font-semibold">
-                  {skill.categorie}
-                </div>
-                <div className="collapse-content text-sm">
-                  <ul>
-                    {Array.isArray(skill.skills) &&
-                      skill.skills.map((skill, index) => (
-                        <li key={index}>{skill}</li>
-                      ))}
-                  </ul>
-                  <div className="flex flex-wrap gap-2 p-2">
-                    <p className="font-semibold">Projets associés:</p>
+            skills.map((skill, index) => {
+              const skillRef = useRef(null);
+              const skillInView = useInView(skillRef, { once: false });
+              return (
+                <motion.div
+                  ref={skillRef}
+                  initial={{ opacity: 0, y: 100 }}
+                  animate={skillInView ? { opacity: 1, y: 0 } : {}}
+                  transition={{
+                    delay: index / 4,
+                    ease: 'easeInOut',
+                    type: 'spring',
+                    bounce: 0.2,
+                    duration: 1,
+                  }}
+                  key={index}
+                  className="collapse-plus bg-base-200 border-base-300 collapse border"
+                >
+                  <label
+                    htmlFor={`catégorie ${skill.categorie}`}
+                    className="sr-only"
+                  ></label>
+                  <input
+                    id={`catégorie ${skill.categorie}`}
+                    type="radio"
+                    name="my-accordion-3"
+                    aria-label={`catégorie ${skill.categorie}`}
+                  />
+                  <div className="collapse-title font-semibold">
+                    {skill.categorie}
+                  </div>
+                  <div className="collapse-content text-sm">
                     <ul>
-                      {Array.isArray(skill.projets) &&
-                        skill.projets.map((projet, index) => (
-                          <Link key={index} href={`/projects/${projet._id}`}>
-                            <li className="text-info font-stretch-200% underline">
-                              {projet.nom}
-                            </li>
-                          </Link>
+                      {Array.isArray(skill.skills) &&
+                        skill.skills.map((skill, index) => (
+                          <li key={index}>{skill}</li>
                         ))}
                     </ul>
+                    <div className="flex flex-wrap gap-2 p-2">
+                      <p className="font-semibold">Projets associés:</p>
+                      <ul>
+                        {Array.isArray(skill.projets) &&
+                          skill.projets.map((projet, index) => (
+                            <Link key={index} href={`/projects/${projet._id}`}>
+                              <li className="text-info font-stretch-200% underline">
+                                {projet.nom}
+                              </li>
+                            </Link>
+                          ))}
+                      </ul>
+                    </div>
                   </div>
-                </div>
-              </motion.div>
-            ))}
+                </motion.div>
+              );
+            })}
         </div>
       </div>
     </section>
