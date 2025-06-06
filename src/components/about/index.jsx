@@ -5,7 +5,7 @@ import { useInView, motion } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
 
-export function About({ skills, technos }) {
+export function About({ skills }) {
   const aboutRef = useRef(null);
   const aboutInView = useInView(aboutRef, { once: true });
 
