@@ -3,12 +3,16 @@ import { About } from '../about';
 export async function AboutSection() {
   const respSkills = await fetch(
     `${process.env.NEXT_PUBLIC_BASE_URL}/api/skill`,
-    { cache: 'no-cache' }
+    {
+      next: { revalidate: 3600 },
+    }
   );
   const skills = await respSkills.json();
   const respTechnos = await fetch(
     `${process.env.NEXT_PUBLIC_BASE_URL}/api/techno`,
-    { cache: 'no-cache' }
+    {
+      next: { revalidate: 3600 },
+    }
   );
   const technos = await respTechnos.json();
   return (

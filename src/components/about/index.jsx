@@ -105,7 +105,7 @@ export function About({ skills, technos }) {
                   ></label>
                   <input
                     id={`catégorie ${skill.categorie}`}
-                    type="radio"
+                    type="checkbox"
                     name="my-accordion-3"
                     aria-label={`catégorie ${skill.categorie}`}
                   />

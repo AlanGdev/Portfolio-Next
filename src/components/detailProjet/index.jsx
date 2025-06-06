@@ -157,10 +157,7 @@ export function DetailProjet({ project }) {
           }}
           className="mb-10 px-4 sm:px-0"
         >
-          <div
-            tabIndex={0}
-            className="collapse-arrow border-base-300 bg-base-200 rounded-box collapse border"
-          >
+          <div className="collapse-arrow border-base-300 bg-base-200 rounded-box collapse border">
             <input type="checkbox" className="peer" />
             <div className="collapse-title peer-checked:bg-success peer-checked:text-primary-content cursor-pointer text-xl font-semibold">
               Problématiques développées
