@@ -4,10 +4,11 @@ export async function AboutSection() {
   const respSkills = await fetch(
     `${process.env.NEXT_PUBLIC_BASE_URL}/api/skill`,
     {
-      next: { revalidate: 3600 },
+      cache: 'no-store',
     }
   );
   const skills = await respSkills.json();
+  console.log('skills: ', skills);
   return (
     <>
       <About skills={skills} />

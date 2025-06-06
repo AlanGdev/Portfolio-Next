@@ -12,7 +12,7 @@ export default async function Projet({ params }) {
   const res = await fetch(
     `${process.env.NEXT_PUBLIC_BASE_URL}/api/projects/${id}`,
     {
-      next: { revalidate: 3600 },
+      cache: 'no-store',
     }
   );
   const project = await res.json();
