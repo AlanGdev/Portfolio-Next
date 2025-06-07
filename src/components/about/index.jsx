@@ -6,6 +6,13 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 export function About({ skills }) {
+  if (!skills || !Array.isArray(skills)) {
+    return (
+      <div className="text-base-content p-8 text-center">
+        <span className="loading loading-dots loading-lg text-info" />
+      </div>
+    );
+  }
   const aboutRef = useRef(null);
   const aboutInView = useInView(aboutRef, { once: true });
 
