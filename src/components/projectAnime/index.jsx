@@ -23,15 +23,15 @@ export function ProjectAnime({ projects }) {
           >
             <motion.div
               className="bg-base-300 w-full rounded-xl p-6 shadow-lg transition-transform duration-300 ease-out hover:scale-105"
-              initial={{ opacity: 0, x: -10, scale: 0 }}
-              animate={projetsInView ? { opacity: 1, x: 0, scale: 1 } : {}}
+              initial={{ opacity: 0, scale: 0 }}
+              animate={projetsInView ? { opacity: 1, scale: 1 } : {}}
               transition={{
                 type: 'spring',
                 stiffness: 50,
                 delay: 0.3 + (index - 1) * 0.3,
                 duration: 0.8,
                 ease: 'easeInOut',
-                bounce: 0.4,
+                bounce: 1,
               }}
             >
               <div className="bg-base-200 relative mb-4 h-40 overflow-hidden rounded">
