@@ -75,16 +75,6 @@ export default async function Home() {
   //console.log(skills);
   return (
     <>
-      {Array.isArray(projects) ? (
-        <div>Projects récupérés!</div>
-      ) : (
-        <div>Projets non récupérés</div>
-      )}
-      {Array.isArray(skills) ? (
-        <div>Skills récupérées!</div>
-      ) : (
-        <div>Skills non récupérées</div>
-      )}
       <HeroSection />
       <ProjectSection projects={projects} />
       <AboutSection skills={skills} />
