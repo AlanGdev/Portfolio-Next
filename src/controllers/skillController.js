@@ -1,5 +1,6 @@
 import Skill from '@/models/skill';
 import dbConnect from '@/lib/mongodb';
+import { NextResponse } from 'next/server';
 
 export async function getSkills() {
   await dbConnect();

@@ -45,12 +45,49 @@ export const metadata = {
   },
 };
 
-export default function Home() {
+export default async function Home() {
+  let projects = [];
+  let skills = [];
+  try {
+    const respProjects = await fetch(
+      `${process.env.NEXT_PUBLIC_BASE_URL}/api/projects/`,
+      { cache: 'no-store' }
+    );
+    if (!respProjects.ok) {
+      throw new Error('Erreur lors de la récupération des projets');
+    }
+    projects = await respProjects.json();
+  } catch (error) {
+    console.error('Erreur fetch Projets', error);
+  }
+  try {
+    const respSkills = await fetch(
+      `${process.env.NEXT_PUBLIC_BASE_URL}/api/skill/`,
+      { cache: 'no-store' }
+    );
+    if (!respSkills.ok)
+      throw new Error('Erreur lors de la récupération des skills');
+    skills = await respSkills.json();
+  } catch (error) {
+    console.error('Erreur fetch Skills', error);
+  }
+  //console.log(projects);
+  //console.log(skills);
   return (
     <>
+      {Array.isArray(projects) ? (
+        <div>Projects récupérés!</div>
+      ) : (
+        <div>Projets non récupérés</div>
+      )}
+      {Array.isArray(skills) ? (
+        <div>Skills récupérées!</div>
+      ) : (
+        <div>Skills non récupérées</div>
+      )}
       <HeroSection />
-      <ProjectSection />
-      <AboutSection />
+      <ProjectSection projects={projects} />
+      <AboutSection skills={skills} />
       <ContactSection />
     </>
   );

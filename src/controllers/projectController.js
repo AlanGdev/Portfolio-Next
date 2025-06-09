@@ -1,6 +1,7 @@
 import Project from '@/models/project';
 import Technology from '@/models/techno';
 import dbConnect from '@/lib/mongodb';
+import { NextResponse } from 'next/server';
 
 exports.createProject = async (req, res) => {
   try {
