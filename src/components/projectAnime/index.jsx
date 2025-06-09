@@ -1,7 +1,7 @@
 'use client';
 import Image from 'next/image';
 import { useRef } from 'react';
-import { motion, spring, useInView } from 'framer-motion';
+import { motion, useInView } from 'framer-motion';
 import Link from 'next/link';
 
 export function ProjectAnime({ projects }) {
@@ -26,7 +26,7 @@ export function ProjectAnime({ projects }) {
               initial={{ opacity: 0, x: -10, scale: 0 }}
               animate={projetsInView ? { opacity: 1, x: 0, scale: 1 } : {}}
               transition={{
-                type: spring,
+                type: 'spring',
                 stiffness: 50,
                 delay: 0.3 + (index - 1) * 0.3,
                 duration: 0.8,

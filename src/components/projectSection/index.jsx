@@ -1,9 +1,6 @@
-import { RecupProjects } from '../projectsSectionServerComponents';
 import { ProjectAnime } from '../projectAnime';
 
-export async function ProjectSection() {
-  const projects = await RecupProjects();
-  console.log(projects);
+export function ProjectSection({ projects }) {
   return (
     <>
       <section id="projets" className="bg-base-200 min-h-screen px-4 py-16">
