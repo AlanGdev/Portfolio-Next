@@ -5,7 +5,7 @@ import { ThemeSwitcher } from '../themeSwitcher';
 export default function Header() {
   return (
     <header className="bg-base-200 sticky top-0 z-50 shadow-md">
-      <nav className="navbar bg-base-200 mb-4 shadow-sm">
+      <nav className="navbar bg-base-200 mb shadow-sm">
         <div className="navbar-start">
           <div className="dropdown">
             <div
