@@ -2,7 +2,7 @@ import { getOneProject } from '@/controllers/projectController';
 import { NextResponse } from 'next/server';
 
 export async function GET(req, context) {
-  const id = context.params.id;
+  const { id } = context.params;
   try {
     const project = await getOneProject(id);
     return NextResponse.json(project);
