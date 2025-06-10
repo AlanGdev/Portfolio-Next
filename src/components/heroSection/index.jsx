@@ -10,7 +10,7 @@ export function HeroSection() {
       <section className="relative z-1 flex h-screen items-center justify-center bg-transparent px-4 text-center">
         <motion.div
           className="absolute top-0 left-0 z-1 flex h-full w-[200%]"
-          animate={{ x: ['0%', '-50%'], opacity: [0, 0.3, 0] }}
+          animate={{ x: ['0%', '-50%'], opacity: [0, 0.4, 0] }}
           transition={{
             x: { duration: 12, ease: 'linear', repeat: Infinity },
             opacity: { duration: 6, ease: 'easeInOut', repeat: Infinity },
@@ -19,13 +19,13 @@ export function HeroSection() {
           <Image
             src={backgroundHero}
             alt="animated background"
-            className="w-1/2 object-cover blur-lg"
+            className="w-1/2 object-cover blur-md"
             fill
           />
           <Image
             src={backgroundHero}
             alt="animated background duplicate"
-            className="w-1/2 object-cover blur-lg"
+            className="w-1/2 object-cover blur-md"
             fill
           />
         </motion.div>
