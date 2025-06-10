@@ -7,7 +7,7 @@ import { TitleAnime } from '../titleAnime';
 export function HeroSection() {
   return (
     <div className="relative overflow-hidden">
-      <section className="relative z-1 flex h-screen items-center justify-center bg-transparent px-4 text-center">
+      <section className="bg-base-100 relative z-1 flex h-screen items-center justify-center px-4 text-center">
         <motion.div
           className="absolute top-0 left-0 z-1 flex h-full w-[200%]"
           animate={{ x: ['0%', '-50%'], opacity: [0, 0.4, 0] }}
