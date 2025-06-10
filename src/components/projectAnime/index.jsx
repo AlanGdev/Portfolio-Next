@@ -39,7 +39,7 @@ export function ProjectAnime({ projects }) {
                   src={project.image}
                   alt={project.nom}
                   fill
-                  className="object-contain"
+                  className="animate-pulse object-contain"
                 />
               </div>
               <div className="flex flex-col justify-between">

@@ -43,7 +43,7 @@ export function DetailProjet({ project }) {
                   bounce: 0.2,
                   duration: 1,
                 }}
-                className="mx-auto w-full max-w-4xl overflow-hidden rounded-lg shadow-lg"
+                className="mx-auto w-full max-w-4xl overflow-hidden rounded-lg shadow-lg hover:scale-105"
               >
                 <Image
                   src={project.image}
