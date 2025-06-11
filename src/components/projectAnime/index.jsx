@@ -22,7 +22,7 @@ export function ProjectAnime({ projects }) {
             className="flex"
           >
             <motion.div
-              className="bg-base-300 w-full rounded-xl p-6 shadow-lg transition-transform duration-300 ease-out hover:scale-105"
+              className="bg-base-300 hover:bg-base-200 w-full rounded-xl p-6 shadow-lg transition-transform duration-300 ease-out hover:scale-105"
               initial={{ opacity: 0, scale: 0 }}
               animate={projetsInView ? { opacity: 1, scale: 1 } : {}}
               transition={{

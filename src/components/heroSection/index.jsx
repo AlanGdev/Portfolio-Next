@@ -71,12 +71,12 @@ export function HeroSection() {
               //opacity: { delay: 3.5, duration: 3, ease: 'easeOut' },
               x: {
                 type: 'spring',
-                stiffness: 120,
-                damping: 12,
-                mass: 2,
-                delay: 3,
+                stiffness: 150,
+                damping: 22,
+                mass: 6,
+                delay: 2.7,
               },
-              opacity: { delay: 3.5, duration: 2 },
+              opacity: { delay: 3, duration: 0.8 },
             }}
           >
             Freelance, je conçois des sites vitrine et applications métier
@@ -88,7 +88,7 @@ export function HeroSection() {
             href="#projets"
             className="btn btn-soft btn-success hover:scale-105"
             animate={{ scale: [0, 1] }}
-            transition={{ scale: { delay: 4.5, duration: 0.3 } }}
+            transition={{ scale: { delay: 3.5, duration: 0.5 } }}
           >
             Voir mes projets
           </motion.a>

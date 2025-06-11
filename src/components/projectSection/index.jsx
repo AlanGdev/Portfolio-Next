@@ -10,7 +10,7 @@ export function ProjectSection({ projects }) {
             src="/backgroundProjects.png"
             fill
             alt="background"
-            className="object-cover opacity-10"
+            className="object-cover opacity-10 blur-xs"
           />
         </div>
 
