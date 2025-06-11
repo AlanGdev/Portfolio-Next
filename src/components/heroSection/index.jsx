@@ -2,6 +2,7 @@
 import { easeInOut, motion } from 'framer-motion';
 import Image from 'next/image';
 import backgroundHero from '../../../public/backgroundHero.png';
+import backgroundHero1 from '../../../public/backgroundHero1.png';
 import codeBinaire from '../../../public/codeBinaire-bouclable.png';
 import { TitleAnime } from '../titleAnime';
 
@@ -20,13 +21,39 @@ export function HeroSection() {
           <Image
             src={backgroundHero}
             alt="animated background"
-            className="w-full blur-sm"
+            className="w-full blur-xs"
             width={0}
             height={0}
             sizes="100vw"
           />
           <Image
             src={backgroundHero}
+            alt="animated background duplicate"
+            className="w-full blur-xs"
+            width={0}
+            height={0}
+            sizes="100vw"
+          />
+        </motion.div>
+
+        <motion.div
+          className="absolute top-0 left-0 z-0 flex h-full w-[200%] flex-row-reverse"
+          animate={{ x: ['0%', '-50%'], opacity: 0.4 }}
+          transition={{
+            x: { duration: 1, ease: 'linear', repeat: Infinity },
+            //opacity: { duration: 6, ease: 'easeInOut', repeat: Infinity },
+          }}
+        >
+          <Image
+            src={backgroundHero1}
+            alt="animated background"
+            className="w-full blur-sm"
+            width={0}
+            height={0}
+            sizes="100vw"
+          />
+          <Image
+            src={backgroundHero1}
             alt="animated background duplicate"
             className="w-full blur-sm"
             width={0}
@@ -65,30 +92,42 @@ export function HeroSection() {
           <TitleAnime message="Bonjour, je suis Alan - Développeur Web"></TitleAnime>
           <motion.p
             className="text-base-content bg-base-200 z-50 mx-auto mb-8 max-w-xl rounded-3xl p-2 text-lg sm:text-xl"
-            animate={{ x: ['-100%', '0%'], opacity: ['0%', '60%'] }}
+            animate={{
+              x: ['-100%', '0%'],
+              scale: [0, 1],
+              opacity: ['0%', '60%'],
+            }}
             transition={{
               //x: { duration: 1, delay: 3.5, ease: 'easeInOut' },
               //opacity: { delay: 3.5, duration: 3, ease: 'easeOut' },
               x: {
                 type: 'spring',
-                stiffness: 150,
-                damping: 22,
+                stiffness: 120,
+                damping: 20,
                 mass: 6,
                 delay: 2.7,
               },
               opacity: { delay: 3, duration: 0.8 },
+              scale: { delay: 2.8, duration: 2 },
             }}
           >
-            Freelance, je conçois des sites vitrine et applications métier
-            modernes, connectées à des API et bases de données. Les réalisations
-            sont pensées pour la performance, le référencement naturel et
-            l’accessibilité, le tout dans un esprit de green-coding.
+            Freelance — je conçois des sites et applis métier performants,
+            connectés à vos données, pensés pour le référencement,
+            l’accessibilité et un numérique plus durable.
           </motion.p>
           <motion.a
             href="#projets"
             className="btn btn-soft btn-success hover:scale-105"
-            animate={{ scale: [0, 1] }}
-            transition={{ scale: { delay: 3.5, duration: 0.5 } }}
+            animate={{
+              scale: [0, 1],
+              y: ['-100%', '0%'],
+              opacity: ['0%', '60%'],
+            }}
+            transition={{
+              scale: { delay: 3.5, duration: 1 },
+              opacity: { delay: 3.5, duration: 1 },
+              y: { delay: 3.5, duration: 1 },
+            }}
           >
             Voir mes projets
           </motion.a>
