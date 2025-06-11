@@ -63,18 +63,35 @@ export function HeroSection() {
         <div className="z-50">
           {' '}
           <TitleAnime message="Bonjour, je suis Alan - Développeur Web"></TitleAnime>
-          <p className="text-base-content bg-base-200 z-50 mx-auto mb-8 max-w-xl rounded-3xl text-lg opacity-60 sm:text-xl">
-            Développeur web freelance, je conçois des sites et applications
-            modernes, performants et évolutifs. Que ce soit pour un site
-            vitrine, une application métier ou une optimisation SEO, je vous
-            accompagne avec des solutions adaptées à vos besoins.
-          </p>
-          <a
+          <motion.p
+            className="text-base-content bg-base-200 z-50 mx-auto mb-8 max-w-xl rounded-3xl p-2 text-lg sm:text-xl"
+            animate={{ x: ['-100%', '0%'], opacity: ['0%', '60%'] }}
+            transition={{
+              //x: { duration: 1, delay: 3.5, ease: 'easeInOut' },
+              //opacity: { delay: 3.5, duration: 3, ease: 'easeOut' },
+              x: {
+                type: 'spring',
+                stiffness: 150,
+                damping: 15,
+                mass: 2,
+                delay: 3.5,
+              },
+              opacity: { delay: 3.5, duration: 3 },
+            }}
+          >
+            Freelance, je conçois des sites vitrine et applications métier
+            modernes, connectées à des API et bases de données. Les réalisations
+            sont pensées pour la performance, le référencement naturel et
+            l’accessibilité, le tout dans un esprit de green-coding.
+          </motion.p>
+          <motion.a
             href="#projets"
             className="btn btn-soft btn-success hover:scale-105"
+            animate={{ scale: [0, 1] }}
+            transition={{ scale: { delay: 5, duration: 2 } }}
           >
             Voir mes projets
-          </a>
+          </motion.a>
         </div>
       </section>
     </div>

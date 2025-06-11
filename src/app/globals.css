@@ -1,6 +1,19 @@
 @import 'tailwindcss';
 @plugin "daisyui" {
   themes:
-    lemonade --default,
-    business --prefersdark;
+    lemonade,
+    business --default;
+}
+@keyframes flash {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+.flash {
+  animation: flash 1.5s ease-in-out infinite;
 }

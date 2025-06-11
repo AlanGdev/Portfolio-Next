@@ -1,5 +1,6 @@
 'use client';
 import { useState, useEffect } from 'react';
+import { jetbrainsMono } from '@/fonts';
 
 export function TitleAnime({ message = '' }) {
   const [text, setText] = useState('');
@@ -19,10 +20,10 @@ export function TitleAnime({ message = '' }) {
   return (
     <h1
       aria-label={message}
-      className="mb-4 min-h-[96px] text-4xl font-bold sm:text-6xl"
+      className={`${jetbrainsMono.className} mb-4 min-h-[96px] text-4xl font-bold sm:text-6xl`}
     >
       {text || message}
-      <span className="border-base-content ml-1 animate-pulse border-r-3" />
+      <span className="border-base-content flash ml-1 border-r-3" />
     </h1>
   );
 }

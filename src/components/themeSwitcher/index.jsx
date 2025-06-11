@@ -27,7 +27,7 @@ export function ThemeSwitcher() {
         <input
           type="checkbox"
           className="theme-controller"
-          value="business"
+          value="lemonade"
           onChange={handleChange}
           checked={theme}
           aria-label={theme ? 'Passer en mode clair' : 'Passer en mode sombre'}
