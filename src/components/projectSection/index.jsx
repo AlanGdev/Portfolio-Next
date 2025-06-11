@@ -1,18 +1,24 @@
+'use client';
 import { ProjectAnime } from '../projectAnime';
 import Image from 'next/image';
+import { motion } from 'framer-motion';
 
 export function ProjectSection({ projects }) {
   return (
     <>
       <div className="bg-base-100 relative min-h-screen">
-        <div className="pointer-events-none absolute top-0 left-0 z-0 h-full w-full animate-pulse">
+        <motion.div
+          animate={{ opacity: ['0%', '35%', '0%'] }}
+          transition={{ repeat: Infinity, duration: 3, ease: 'easeInOut' }}
+          className="pointer-events-none absolute top-0 left-0 z-0 h-full w-full"
+        >
           <Image
             src="/backgroundProjects.png"
             fill
             alt="background"
-            className="object-cover opacity-10 blur-xs"
+            className="object-cover opacity-50 blur-xs"
           />
-        </div>
+        </motion.div>
 
         <section
           id="projets"
