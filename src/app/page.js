@@ -22,13 +22,13 @@ export const metadata = {
     title: 'Alan Grolleau | Développeur Web',
     description:
       'Création de sites et applications web performants avec Next.js et SEO optimisé.',
-    url: 'https://alangrolleau-developpeurweb-portfolio.vercel.app',
+    url: 'https://alangrolleau-developpeurweb-portfol.vercel.app',
     siteName: 'Alan Grolleau | Portfolio',
     locale: 'fr_FR',
     type: 'website',
     images: [
       {
-        url: 'https://alangrolleau-developpeurweb-portfolio.vercel.app/og-image.png',
+        url: 'https://alangrolleau-developpeurweb-portfol.vercel.app/openGraphGeneral.png',
         width: 1200,
         height: 630,
       },
@@ -40,7 +40,7 @@ export const metadata = {
     description:
       'Création de sites et applications web performants avec Next.js et SEO optimisé.',
     images: [
-      'https://alangrolleau-developpeurweb-portfolio.vercel.app/og-image.png',
+      'https://alangrolleau-developpeurweb-portfol.vercel.app/openGraphGeneral.png',
     ],
   },
 };
