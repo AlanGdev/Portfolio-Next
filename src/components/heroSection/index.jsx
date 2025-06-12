@@ -1,21 +1,27 @@
 'use client';
-import { delay, easeInOut, motion } from 'framer-motion';
+import { delay, easeInOut, motion, useInView } from 'framer-motion';
 import Image from 'next/image';
 import backgroundHero from '../../../public/backgroundHero.webp';
 import backgroundHero1 from '../../../public/backgroundHero1.webp';
 import codeBinaire from '../../../public/codeBinaire-bouclable.webp';
 import { TitleAnime } from '../titleAnime';
+import { useRef } from 'react';
 
 export function HeroSection() {
+  const heroRef = useRef(null);
+  const heroInView = useInView(heroRef, { once: false });
   return (
     <div className="relative overflow-hidden">
-      <section className="bg-base-100 relative z-1 flex h-screen items-center justify-center px-4 text-center">
+      <section
+        className="bg-base-100 relative z-1 flex h-screen items-center justify-center px-4 text-center"
+        ref={heroRef}
+      >
         <motion.div
           className="absolute top-0 left-0 z-0 flex h-full w-[200%] flex-row-reverse"
           initial={{ x: '0%', opacity: 0 }}
-          animate={{ x: ['0%', '-50%'], opacity: 0.3 }}
+          animate={useInView ? { x: ['0%', '-50%'], opacity: 0.3 } : {}}
           transition={{
-            x: { duration: 2, ease: 'linear', repeat: Infinity, delay: 0.3 },
+            x: { duration: 2, ease: 'easeInOut', repeat: 5, delay: 0.3 },
             //opacity: { duration: 6, ease: 'easeInOut', repeat: Infinity },
           }}
         >
@@ -42,7 +48,7 @@ export function HeroSection() {
           initial={{ x: '0%', opacity: 0 }}
           animate={{ x: ['0%', '-50%'], opacity: 0.4 }}
           transition={{
-            x: { duration: 1, ease: 'linear', repeat: Infinity, delay: 0.3 },
+            x: { duration: 1, ease: 'easeInOut', repeat: 8, delay: 0.3 },
             //opacity: { duration: 6, ease: 'easeInOut', repeat: Infinity },
           }}
         >
@@ -69,7 +75,7 @@ export function HeroSection() {
           initial={{ x: '0%', opacity: 0 }}
           animate={{ x: ['0%', '-50%'], opacity: 0.5 }}
           transition={{
-            x: { duration: 8, ease: 'linear', repeat: Infinity, delay: 0.3 },
+            x: { duration: 4.5, ease: 'linear', repeat: 2, delay: 0.3 },
           }}
         >
           <Image

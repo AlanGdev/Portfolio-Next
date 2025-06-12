@@ -19,7 +19,7 @@ export function ProjectAnime({ projects }) {
             key={index}
             aria-label={`Voir le projet ${project.nom}`}
             href={`/projects/${project._id}`}
-            className="flex hover:scale-105"
+            className="flex transform-gpu will-change-transform hover:scale-105"
           >
             <motion.div
               className="hover:bg-base-200 w-full transform-gpu rounded-xl bg-transparent p-6 shadow-lg will-change-transform"
