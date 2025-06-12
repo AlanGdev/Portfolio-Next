@@ -42,7 +42,7 @@ export function AboutSection({ skills }) {
           transition={{ delay: 0.5 }}
         >
           <Image
-            src="/alan1.webp"
+            src={'/alan1.webp'}
             alt="Photo de Alan"
             width={200}
             height={200}

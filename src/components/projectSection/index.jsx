@@ -13,7 +13,7 @@ export function ProjectSection({ projects }) {
           className="pointer-events-none absolute top-0 left-0 z-0 h-full w-full"
         >
           <Image
-            src="/backgroundProjects.png"
+            src="/backgroundProjects.webp"
             fill
             alt="background"
             className="object-cover opacity-50 blur-xs"

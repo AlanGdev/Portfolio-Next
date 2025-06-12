@@ -1,9 +1,9 @@
 'use client';
 import { easeInOut, motion } from 'framer-motion';
 import Image from 'next/image';
-import backgroundHero from '../../../public/backgroundHero.png';
-import backgroundHero1 from '../../../public/backgroundHero1.png';
-import codeBinaire from '../../../public/codeBinaire-bouclable.png';
+import backgroundHero from '../../../public/backgroundHero.webp';
+import backgroundHero1 from '../../../public/backgroundHero1.webp';
+import codeBinaire from '../../../public/codeBinaire-bouclable.webp';
 import { TitleAnime } from '../titleAnime';
 
 export function HeroSection() {
