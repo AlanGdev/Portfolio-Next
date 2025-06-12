@@ -22,7 +22,7 @@ export function ProjectAnime({ projects }) {
             className="flex"
           >
             <motion.div
-              className="bg-base-300 hover:bg-base-200 w-full rounded-xl p-6 shadow-lg transition-transform duration-300 ease-out hover:scale-105"
+              className="hover:bg-base-200 w-full rounded-xl bg-transparent p-6 shadow-lg transition-transform duration-300 ease-out hover:scale-105"
               initial={{ opacity: 0, scale: 0 }}
               animate={projetsInView ? { opacity: 1, scale: 1 } : {}}
               transition={{
@@ -31,7 +31,7 @@ export function ProjectAnime({ projects }) {
                 ease: 'easeInOut',
               }}
             >
-              <div className="bg-base-200 relative mb-4 h-40 overflow-hidden rounded">
+              <div className="relative mb-4 h-40 overflow-hidden rounded bg-transparent">
                 <Image
                   src={project.image}
                   alt={project.nom}
@@ -46,22 +46,6 @@ export function ProjectAnime({ projects }) {
                 <p className="text-base-content text-sm">
                   catégorie: {project.categorie}
                 </p>
-                <div className="flex gap-2">
-                  {Array.isArray(project.technologies) &&
-                    project.technologies.map((technologie, index) => {
-                      return (
-                        <Image
-                          key={index}
-                          src={technologie.image}
-                          width={32}
-                          height={17}
-                          alt={`${technologie.nom}`}
-                          className="object-center hover:scale-120"
-                          title={technologie.nom}
-                        />
-                      );
-                    })}
-                </div>
               </div>
             </motion.div>
           </Link>
