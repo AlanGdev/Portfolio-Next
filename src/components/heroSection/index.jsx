@@ -1,5 +1,5 @@
 'use client';
-import { easeInOut, motion } from 'framer-motion';
+import { delay, easeInOut, motion } from 'framer-motion';
 import Image from 'next/image';
 import backgroundHero from '../../../public/backgroundHero.webp';
 import backgroundHero1 from '../../../public/backgroundHero1.webp';
@@ -12,9 +12,10 @@ export function HeroSection() {
       <section className="bg-base-100 relative z-1 flex h-screen items-center justify-center px-4 text-center">
         <motion.div
           className="absolute top-0 left-0 z-0 flex h-full w-[200%] flex-row-reverse"
+          initial={{ x: '0%', opacity: 0 }}
           animate={{ x: ['0%', '-50%'], opacity: 0.3 }}
           transition={{
-            x: { duration: 2, ease: 'linear', repeat: Infinity },
+            x: { duration: 2, ease: 'linear', repeat: Infinity, delay: 0.3 },
             //opacity: { duration: 6, ease: 'easeInOut', repeat: Infinity },
           }}
         >
@@ -38,9 +39,10 @@ export function HeroSection() {
 
         <motion.div
           className="absolute top-0 left-0 z-0 flex h-full w-[200%] flex-row-reverse"
+          initial={{ x: '0%', opacity: 0 }}
           animate={{ x: ['0%', '-50%'], opacity: 0.4 }}
           transition={{
-            x: { duration: 1, ease: 'linear', repeat: Infinity },
+            x: { duration: 1, ease: 'linear', repeat: Infinity, delay: 0.3 },
             //opacity: { duration: 6, ease: 'easeInOut', repeat: Infinity },
           }}
         >
@@ -64,9 +66,10 @@ export function HeroSection() {
 
         <motion.div
           className="absolute top-0 left-0 z-0 flex h-full w-[200%]"
+          initial={{ x: '0%', opacity: 0 }}
           animate={{ x: ['0%', '-50%'], opacity: 0.5 }}
           transition={{
-            x: { duration: 8, ease: 'linear', repeat: Infinity },
+            x: { duration: 8, ease: 'linear', repeat: Infinity, delay: 0.3 },
           }}
         >
           <Image
@@ -92,6 +95,7 @@ export function HeroSection() {
           <TitleAnime message="Bonjour, je suis Alan - Développeur Web"></TitleAnime>
           <motion.p
             className="text-base-content bg-base-200 z-50 mx-auto mb-8 max-w-xl rounded-3xl p-2 text-lg sm:text-xl"
+            initial={{ x: '-100%', scale: 0, opacity: 0 }}
             animate={{
               x: ['-100%', '0%'],
               scale: [0, 1],
@@ -118,6 +122,7 @@ export function HeroSection() {
           <motion.a
             href="#projets"
             className="btn btn-soft btn-success hover:scale-105"
+            initial={{ scale: 0, y: '-100%', opacity: 0 }}
             animate={{
               scale: [0, 1],
               y: ['-100%', '0%'],

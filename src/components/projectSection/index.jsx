@@ -8,8 +8,14 @@ export function ProjectSection({ projects }) {
     <>
       <div className="bg-base-100 relative min-h-screen">
         <motion.div
+          initial={{ opacity: 0 }}
           animate={{ opacity: ['0%', '35%', '0%'] }}
-          transition={{ repeat: Infinity, duration: 6, ease: 'easeInOut' }}
+          transition={{
+            repeat: Infinity,
+            duration: 6,
+            ease: 'easeInOut',
+            delay: 0.3,
+          }}
           className="pointer-events-none absolute top-0 left-0 z-0 h-full w-full"
         >
           <Image
