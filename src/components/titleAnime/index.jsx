@@ -8,14 +8,17 @@ export function TitleAnime({ message = '' }) {
 
   useEffect(() => {
     let i = 0;
-    const typing = setInterval(() => {
+    let cancelled = false;
+    const typing = () => {
+      if (cancelled) return;
       setText(message.slice(0, i + 1));
       i++;
-      if (i === message.length) {
-        clearInterval(typing);
+      if (i < message.length) {
+        setTimeout(typing, 60);
       }
-    }, 60);
-    return () => clearInterval(typing);
+    };
+    typing();
+    return () => (cancelled = true);
   }, [message]);
 
   return (

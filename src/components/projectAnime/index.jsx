@@ -19,10 +19,10 @@ export function ProjectAnime({ projects }) {
             key={index}
             aria-label={`Voir le projet ${project.nom}`}
             href={`/projects/${project._id}`}
-            className="flex"
+            className="flex hover:scale-105"
           >
             <motion.div
-              className="hover:bg-base-200 w-full rounded-xl bg-transparent p-6 shadow-lg transition-transform duration-300 ease-out hover:scale-105"
+              className="hover:bg-base-200 w-full transform-gpu rounded-xl bg-transparent p-6 shadow-lg will-change-transform"
               initial={{ opacity: 0, scale: 0 }}
               animate={projetsInView ? { opacity: 1, scale: 1 } : {}}
               transition={{
@@ -36,7 +36,7 @@ export function ProjectAnime({ projects }) {
                   src={project.image}
                   alt={project.nom}
                   fill
-                  className="animate-pulse object-contain"
+                  className="object-contain"
                 />
               </div>
               <div className="flex flex-col justify-between">
