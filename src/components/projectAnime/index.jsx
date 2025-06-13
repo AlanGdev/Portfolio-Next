@@ -22,7 +22,7 @@ export function ProjectAnime({ projects }) {
             className="flex transform-gpu will-change-transform hover:scale-105"
           >
             <motion.div
-              className="hover:bg-base-200 w-full transform-gpu rounded-xl bg-transparent p-6 shadow-lg will-change-transform"
+              className="hover:bg-base-200 w-full transform-gpu rounded-xl bg-transparent p-4 shadow-lg will-change-transform"
               initial={{ opacity: 0, scale: 0 }}
               animate={projetsInView ? { opacity: 1, scale: 1 } : {}}
               transition={{
@@ -31,12 +31,12 @@ export function ProjectAnime({ projects }) {
                 ease: 'easeInOut',
               }}
             >
-              <div className="relative mb-4 h-40 overflow-hidden rounded bg-transparent">
+              <div className="relative mb-4 h-72 overflow-hidden rounded-2xl bg-transparent">
                 <Image
                   src={project.image}
                   alt={project.nom}
                   fill
-                  className="object-contain"
+                  className="rounded object-contain"
                 />
               </div>
               <div className="flex flex-col justify-between">
