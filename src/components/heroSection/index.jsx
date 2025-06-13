@@ -19,9 +19,9 @@ export function HeroSection() {
         <motion.div
           className="absolute top-0 left-0 z-0 flex h-full w-[200%] flex-row-reverse"
           initial={{ x: '0%', opacity: 0 }}
-          animate={useInView ? { x: ['0%', '-50%'], opacity: 0.3 } : {}}
+          animate={heroInView ? { x: ['0%', '-50%'], opacity: 0.3 } : {}}
           transition={{
-            x: { duration: 2, ease: 'easeInOut', repeat: 5, delay: 0.3 },
+            x: { duration: 2, ease: 'linear', repeat: Infinity, delay: 0.3 },
             //opacity: { duration: 6, ease: 'easeInOut', repeat: Infinity },
           }}
         >
@@ -46,9 +46,9 @@ export function HeroSection() {
         <motion.div
           className="absolute top-0 left-0 z-0 flex h-full w-[200%] flex-row-reverse"
           initial={{ x: '0%', opacity: 0 }}
-          animate={{ x: ['0%', '-50%'], opacity: 0.4 }}
+          animate={heroInView ? { x: ['0%', '-50%'], opacity: 0.4 } : {}}
           transition={{
-            x: { duration: 1, ease: 'easeInOut', repeat: 8, delay: 0.3 },
+            x: { duration: 1, ease: 'linear', repeat: Infinity, delay: 0.3 },
             //opacity: { duration: 6, ease: 'easeInOut', repeat: Infinity },
           }}
         >

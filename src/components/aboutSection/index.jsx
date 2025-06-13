@@ -46,7 +46,7 @@ export function AboutSection({ skills }) {
             alt="Photo de Alan"
             width={200}
             height={200}
-            className="border-primary-content h-36 w-36 rounded-full border object-cover brightness-200 contrast-100 hue-rotate-60 filter"
+            className="border-secondary-content h-36 w-36 rounded-full border object-cover brightness-180 contrast-100 hue-rotate-60 filter"
           />
           <div className="text-base-content">
             <p className="mb-4">
