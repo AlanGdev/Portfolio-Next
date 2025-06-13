@@ -26,6 +26,8 @@ export function ProjectAnime({ projects }) {
               initial={{ opacity: 0, scale: 0 }}
               animate={projetsInView ? { opacity: 1, scale: 1 } : {}}
               transition={{
+                type: 'spring',
+                bounce: 0.4,
                 delay: 0.3 + (index - 1) * 0.3,
                 duration: 0.8,
                 ease: 'easeInOut',

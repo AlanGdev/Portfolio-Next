@@ -38,10 +38,11 @@ export default function Header() {
                 <Link href="/">Accueil</Link>
               </li>
               <li>
-                <Link href="/#a-propos">À propos</Link>
-              </li>
-              <li>
                 <Link href="/#projets">Projets</Link>
+              </li>
+
+              <li>
+                <Link href="/#a-propos">À propos</Link>
               </li>
               <li>
                 <Link href="/#contact">Contact</Link>
@@ -58,10 +59,11 @@ export default function Header() {
               <Link href="/">Accueil</Link>
             </li>
             <li>
-              <Link href="/#a-propos">À propos</Link>
-            </li>
-            <li>
               <Link href="/#projets">Projets</Link>
+            </li>
+
+            <li>
+              <Link href="/#a-propos">À propos</Link>
             </li>
             <li>
               <Link href="/#contact">Contact</Link>

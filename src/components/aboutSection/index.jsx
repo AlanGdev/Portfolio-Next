@@ -14,7 +14,7 @@ export function AboutSection({ skills }) {
     );
   }
   const aboutRef = useRef(null);
-  const aboutInView = useInView(aboutRef, { once: true });
+  const aboutInView = useInView(aboutRef, { once: false });
 
   const skillRef = useRef(null);
   const skillInView = useInView(skillRef, { once: false });
@@ -27,10 +27,10 @@ export function AboutSection({ skills }) {
     >
       <div className="mx-auto max-w-4xl">
         <motion.h2
-          className="text-base-content mb-8 text-center text-3xl font-bold"
-          initial={{ opacity: 0, y: 50 }}
-          animate={aboutInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ delay: 0.3 }}
+          className="text-success-content bg-success mb-8 origin-bottom text-center text-3xl font-bold font-stretch-150%"
+          initial={{ opacity: 0, y: 50, scaleY: 0 }}
+          animate={aboutInView ? { opacity: 1, y: 0, scaleY: 1 } : {}}
+          transition={{ delay: 0.3, duration: 0.5 }}
         >
           À propos de moi...
         </motion.h2>
@@ -78,7 +78,7 @@ export function AboutSection({ skills }) {
               ].map((skill) => (
                 <span
                   key={skill}
-                  className="badge badge-outline border-info text-info"
+                  className="badge badge-outline border-success text-success"
                 >
                   {skill}
                 </span>
@@ -91,17 +91,17 @@ export function AboutSection({ skills }) {
             skills.map((skill, index) => {
               return (
                 <motion.div
-                  initial={{ opacity: 0, y: 100 }}
-                  animate={skillInView ? { opacity: 1, y: 0 } : {}}
+                  initial={{ opacity: 0, y: 100, scaleX: 0 }}
+                  animate={skillInView ? { opacity: 1, y: 0, scaleX: 1 } : {}}
                   transition={{
                     delay: index / 4,
                     ease: 'easeInOut',
                     type: 'spring',
-                    bounce: 0.2,
+                    bounce: 0.3,
                     duration: 1,
                   }}
                   key={index}
-                  className="collapse-plus bg-base-200 border-base-300 collapse border"
+                  className="collapse-plus bg-base-200 border-base-300 collapse origin-left border"
                 >
                   <label
                     htmlFor={`catégorie ${skill.categorie}`}
@@ -113,7 +113,7 @@ export function AboutSection({ skills }) {
                     name="my-accordion-3"
                     aria-label={`catégorie ${skill.categorie}`}
                   />
-                  <div className="collapse-title font-semibold">
+                  <div className="collapse-title font-semibold font-stretch-150%">
                     {skill.categorie}
                   </div>
                   <div className="collapse-content text-sm">
@@ -129,7 +129,7 @@ export function AboutSection({ skills }) {
                         {Array.isArray(skill.projets) &&
                           skill.projets.map((projet, index) => (
                             <Link key={index} href={`/projects/${projet._id}`}>
-                              <li className="text-info font-stretch-200% underline">
+                              <li className="text-primary font-stretch-200% underline">
                                 {projet.nom}
                               </li>
                             </Link>

@@ -1,9 +1,12 @@
 'use client';
 import { ProjectAnime } from '../projectAnime';
 import Image from 'next/image';
-import { motion } from 'framer-motion';
+import { motion, useInView } from 'framer-motion';
+import { useRef } from 'react';
 
 export function ProjectSection({ projects }) {
+  const titleRef = useRef();
+  const titleInView = useInView(titleRef, { once: false });
   return (
     <>
       <div className="bg-base-100 relative min-h-screen">
@@ -31,9 +34,15 @@ export function ProjectSection({ projects }) {
           className="relative z-10 min-h-screen bg-transparent px-4 py-16"
         >
           <div className="mx-auto max-w-5xl">
-            <h2 className="text-base-content mb-12 text-center text-3xl font-bold">
+            <motion.h2
+              ref={titleRef}
+              className="h2 text-base-content mb-12 origin-top text-center text-3xl font-bold font-stretch-200%"
+              initial={{ scaleY: 0 }}
+              animate={titleInView ? { scaleY: [0, 1] } : {}}
+              transition={{ delay: 0.1, duration: 0.3 }}
+            >
               Mes projets
-            </h2>
+            </motion.h2>
             <ProjectAnime projects={projects} />
           </div>
         </section>
