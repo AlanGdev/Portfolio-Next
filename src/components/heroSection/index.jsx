@@ -11,9 +11,12 @@ export function HeroSection() {
   const heroRef = useRef(null);
   const heroInView = useInView(heroRef, { once: false });
   return (
-    <div className="overflow-hidden">
-      <section
-        className="bg-base-100 relative z-1 flex h-screen w-screen items-center justify-center px-4 text-center"
+    <div className="h-screen w-screen overflow-hidden">
+      <motion.section
+        initial={{ scalY: 0 }}
+        animate={{ scaleY: 1 }}
+        transition={{ duration: 0.6, delay: 2.3 }}
+        className="bg-base-100 relative z-0 flex h-screen w-screen items-center justify-center px-4 text-center"
         ref={heroRef}
       >
         <motion.div
@@ -21,7 +24,7 @@ export function HeroSection() {
           initial={{ x: '0%', opacity: 0 }}
           animate={heroInView ? { x: ['0%', '-50%'], opacity: 0.3 } : {}}
           transition={{
-            x: { duration: 2, ease: 'linear', repeat: Infinity, delay: 0.3 },
+            x: { duration: 2, ease: 'linear', repeat: Infinity, delay: 3.5 },
             //opacity: { duration: 6, ease: 'easeInOut', repeat: Infinity },
           }}
         >
@@ -48,7 +51,7 @@ export function HeroSection() {
           initial={{ x: '0%', opacity: 0 }}
           animate={heroInView ? { x: ['0%', '-50%'], opacity: 0.4 } : {}}
           transition={{
-            x: { duration: 1, ease: 'linear', repeat: Infinity, delay: 0.3 },
+            x: { duration: 1, ease: 'linear', repeat: Infinity, delay: 2.5 },
             //opacity: { duration: 6, ease: 'easeInOut', repeat: Infinity },
           }}
         >
@@ -75,7 +78,7 @@ export function HeroSection() {
           initial={{ x: '0%', opacity: 0 }}
           animate={{ x: ['0%', '-50%'], opacity: 0.5 }}
           transition={{
-            x: { duration: 4.5, ease: 'linear', repeat: 2, delay: 0.3 },
+            x: { duration: 4.5, ease: 'linear', repeat: 2, delay: 3 },
           }}
         >
           <Image
@@ -107,8 +110,8 @@ export function HeroSection() {
               opacity: ['0%', '65%'],
             }}
             transition={{
-              opacity: { delay: 5.3 },
-              scale: { delay: 5.3, type: 'spring', bounce: 0.8 },
+              opacity: { delay: 5 },
+              scale: { delay: 5, type: 'spring', bounce: 0.4, duration: 2 },
             }}
           >
             Freelance — je conçois des sites et applis métier performants,
@@ -125,15 +128,21 @@ export function HeroSection() {
               opacity: ['0%', '60%'],
             }}
             transition={{
-              scale: { delay: 6, duration: 1 },
-              opacity: { delay: 6, duration: 1 },
-              y: { delay: 6, duration: 1 },
+              scale: {
+                delay: 5.5,
+                duration: 1,
+                type: 'spring',
+                duration: 2,
+                bounce: 0.4,
+              },
+              opacity: { delay: 5.5, duration: 0.5 },
+              y: { delay: 5.5, duration: 0.5 },
             }}
           >
             Voir mes projets
           </motion.a>
         </div>
-      </section>
+      </motion.section>
     </div>
   );
 }
