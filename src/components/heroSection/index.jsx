@@ -11,7 +11,7 @@ export function HeroSection() {
   const heroRef = useRef(null);
   const heroInView = useInView(heroRef, { once: false });
   return (
-    <div className="absolute top-0 left-0 overflow-hidden">
+    <div className="overflow-hidden">
       <section
         className="bg-base-100 relative z-1 flex h-screen w-screen items-center justify-center px-4 text-center"
         ref={heroRef}

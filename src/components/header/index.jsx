@@ -1,22 +1,10 @@
-'use client';
 import Link from 'next/link';
 import { LoginButton } from '../loginButton';
 import { ThemeSwitcher } from '../themeSwitcher';
-import { useRouter, usePathname } from 'next/navigation';
+import { VT323 } from 'next/font/google';
+import { Restart } from '../restart';
 
 export default function Header() {
-  const router = useRouter();
-  const pathname = usePathname();
-
-  const handleHomeClick = (e) => {
-    e.preventDefault();
-    if (pathname === '/') {
-      router.replace('/');
-    } else {
-      router.push('/');
-    }
-  };
-
   return (
     <header className="bg-base-200 sticky top-0 z-50 shadow-md">
       <nav className="navbar bg-base-200 mb shadow-sm">
@@ -35,13 +23,12 @@ export default function Header() {
                 viewBox="0 0 24 24"
                 stroke="currentColor"
               >
-                {' '}
                 <path
                   strokeLinecap="round"
                   strokeLinejoin="round"
                   strokeWidth="2"
                   d="M4 6h16M4 12h8m-8 6h16"
-                />{' '}
+                />
               </svg>
             </div>
             <ul
@@ -63,6 +50,7 @@ export default function Header() {
               </li>
             </ul>
           </div>
+          <Restart />
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">
@@ -70,11 +58,10 @@ export default function Header() {
               <Link href="/">Accueil</Link>
             </li>
             <li>
-              <Link href="/#projets">Projets</Link>
-            </li>
-
-            <li>
               <Link href="/#a-propos">À propos</Link>
+            </li>
+            <li>
+              <Link href="/#projets">Projets</Link>
             </li>
             <li>
               <Link href="/#contact">Contact</Link>
