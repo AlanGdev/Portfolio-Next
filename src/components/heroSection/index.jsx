@@ -78,7 +78,7 @@ export function HeroSection() {
           initial={{ x: '0%', opacity: 0 }}
           animate={{ x: ['0%', '-50%'], opacity: 0.5 }}
           transition={{
-            x: { duration: 4.5, ease: 'linear', repeat: 2, delay: 3 },
+            x: { duration: 4.5, ease: 'linear', repeat: Infinity, delay: 3 },
           }}
         >
           <Image

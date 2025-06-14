@@ -46,7 +46,8 @@ export function ProjectAnime({ projects }) {
                   {project.nom}
                 </h3>
                 <p className="text-base-content text-sm">
-                  catégorie: {project.categorie}
+                  <span className="font-semibold">description: </span>{' '}
+                  {project.description.slice(0, 110)}...
                 </p>
               </div>
             </motion.div>
