@@ -11,9 +11,9 @@ export function HeroSection() {
   const heroRef = useRef(null);
   const heroInView = useInView(heroRef, { once: false });
   return (
-    <div className="relative overflow-hidden">
+    <div className="absolute top-0 left-0 overflow-hidden">
       <section
-        className="bg-base-100 relative z-1 flex h-screen items-center justify-center px-4 text-center"
+        className="bg-base-100 relative z-1 flex h-screen w-screen items-center justify-center px-4 text-center"
         ref={heroRef}
       >
         <motion.div
@@ -115,10 +115,10 @@ export function HeroSection() {
                 stiffness: 120,
                 damping: 20,
                 mass: 6,
-                delay: 2.7,
+                delay: 5.2,
               },
-              opacity: { delay: 3, duration: 0.8 },
-              scale: { delay: 2.8, duration: 2 },
+              opacity: { delay: 5.5, duration: 0.8 },
+              scale: { delay: 5.3, duration: 2 },
             }}
           >
             Freelance — je conçois des sites et applis métier performants,
@@ -135,9 +135,9 @@ export function HeroSection() {
               opacity: ['0%', '60%'],
             }}
             transition={{
-              scale: { delay: 3.5, duration: 1 },
-              opacity: { delay: 3.5, duration: 1 },
-              y: { delay: 3.5, duration: 1 },
+              scale: { delay: 6, duration: 1 },
+              opacity: { delay: 6, duration: 1 },
+              y: { delay: 6, duration: 1 },
             }}
           >
             Voir mes projets

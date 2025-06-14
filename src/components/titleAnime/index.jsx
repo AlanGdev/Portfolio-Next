@@ -1,24 +1,30 @@
 'use client';
 import { useState, useEffect } from 'react';
-import { jetbrainsMono } from '@/fonts';
 import { motion } from 'framer-motion';
+import { VT323 } from 'next/font/google';
+import { IBM_Plex_Mono } from 'next/font/google';
+
+const vt323 = VT323({ subsets: ['latin'], weight: '400' });
+const ibmPlexMono = IBM_Plex_Mono({ subsets: ['latin'], weight: '400' });
 
 export function TitleAnime({ message = '' }) {
   const [text, setText] = useState('');
 
   useEffect(() => {
-    let i = 0;
-    let cancelled = false;
-    const typing = () => {
-      if (cancelled) return;
-      setText(message.slice(0, i + 1));
-      i++;
-      if (i < message.length) {
-        setTimeout(typing, 60);
-      }
-    };
-    typing();
-    return () => (cancelled = true);
+    const tape = setTimeout(() => {
+      let i = 0;
+      let cancelled = false;
+      const typing = () => {
+        if (cancelled) return;
+        setText(message.slice(0, i + 1));
+        i++;
+        if (i < message.length) {
+          setTimeout(typing, 60);
+        }
+      };
+      typing();
+      return () => (cancelled = true);
+    }, 2800);
   }, [message]);
 
   return (
@@ -28,8 +34,8 @@ export function TitleAnime({ message = '' }) {
       transition={{ delay: 0.3 }}
       aria-label={message}
       className={
-        { text } != ''
-          ? `${jetbrainsMono.className} mb-4 min-h-[96px] text-4xl font-bold sm:text-6xl`
+        text
+          ? `${ibmPlexMono.className} mb-4 min-h-[96px] text-4xl sm:text-6xl`
           : 'text-base-400'
       }
     >

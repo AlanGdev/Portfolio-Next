@@ -1,8 +1,22 @@
+'use client';
 import Link from 'next/link';
 import { LoginButton } from '../loginButton';
 import { ThemeSwitcher } from '../themeSwitcher';
+import { useRouter, usePathname } from 'next/navigation';
 
 export default function Header() {
+  const router = useRouter();
+  const pathname = usePathname();
+
+  const handleHomeClick = (e) => {
+    e.preventDefault();
+    if (pathname === '/') {
+      router.replace('/');
+    } else {
+      router.push('/');
+    }
+  };
+
   return (
     <header className="bg-base-200 sticky top-0 z-50 shadow-md">
       <nav className="navbar bg-base-200 mb shadow-sm">
@@ -49,9 +63,6 @@ export default function Header() {
               </li>
             </ul>
           </div>
-          <Link href="/" className="btn btn-ghost text-xl">
-            Mon Portfolio
-          </Link>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">

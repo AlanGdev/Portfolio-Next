@@ -2,6 +2,7 @@ import { HeroSection } from '@/components/heroSection';
 import { ProjectSection } from '@/components/projectSection';
 import { AboutSection } from '@/components/aboutSection';
 import { ContactSection } from '@/components/contactSection';
+import { LayoutOverlay } from '@/components/layoutOverlay';
 
 export const metadata = {
   title: 'Alan Grolleau | Développeur Web Freelance',
@@ -75,10 +76,13 @@ export default async function Home() {
   //console.log(skills);
   return (
     <>
-      <HeroSection />
-      <ProjectSection projects={projects} />
-      <AboutSection skills={skills} />
-      <ContactSection />
+      <div className="relative">
+        <LayoutOverlay />
+        <HeroSection />
+        <ProjectSection projects={projects} />
+        <AboutSection skills={skills} />
+        <ContactSection />
+      </div>{' '}
     </>
   );
 }
