@@ -101,24 +101,14 @@ export function HeroSection() {
           <TitleAnime message="Bonjour, je suis Alan - Développeur Web"></TitleAnime>
           <motion.p
             className="text-base-content bg-base-200 z-50 mx-auto mb-8 max-w-xl rounded-3xl p-2 text-lg sm:text-xl"
-            initial={{ x: '-100%', scale: 0, opacity: 0 }}
+            initial={{ scale: 0, opacity: 0 }}
             animate={{
-              x: ['-100%', '0%'],
               scale: [0, 1],
-              opacity: ['0%', '60%'],
+              opacity: ['0%', '65%'],
             }}
             transition={{
-              //x: { duration: 1, delay: 3.5, ease: 'easeInOut' },
-              //opacity: { delay: 3.5, duration: 3, ease: 'easeOut' },
-              x: {
-                type: 'spring',
-                stiffness: 120,
-                damping: 20,
-                mass: 6,
-                delay: 5.2,
-              },
-              opacity: { delay: 5.5, duration: 0.8 },
-              scale: { delay: 5.3, duration: 2 },
+              opacity: { delay: 5.3 },
+              scale: { delay: 5.3, type: 'spring', bounce: 0.8 },
             }}
           >
             Freelance — je conçois des sites et applis métier performants,
@@ -127,7 +117,7 @@ export function HeroSection() {
           </motion.p>
           <motion.a
             href="#projets"
-            className="btn btn-soft btn-success hover:scale-105"
+            className="btn btn-outline btn-success hover:scale-105"
             initial={{ scale: 0, y: '-100%', opacity: 0 }}
             animate={{
               scale: [0, 1],
