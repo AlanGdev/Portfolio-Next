@@ -5,12 +5,12 @@ import { VT323 } from 'next/font/google';
 import { motion } from 'framer-motion';
 
 const lines = [
-  '...',
-  'Booting system...',
-  'Loading modules...',
-  'Initializing Web Interface...',
-  'Starting services...',
-  'Launching Portfolio... !-) ',
+  '> Initializing system...',
+  '> Checking dependencies... [OK]',
+  '> Injecting cafffffeine...',
+  '> Compiling ideas... 72%',
+  '> Engaging curiosity...',
+  '> Terminal unlocked. Welcome!) ',
 ];
 const vt323 = VT323({ weight: '400', subsets: ['latin'] });
 

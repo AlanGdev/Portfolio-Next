@@ -49,7 +49,7 @@ export function AboutSection({ skills }) {
             className="border-secondary-content h-36 w-36 rounded-full border object-cover brightness-180 contrast-100 hue-rotate-60 filter"
           />
           <div className="text-base-content">
-            <p className="mb-4">
+            <p className="mb-4 font-stretch-125%">
               Après une riche expérience dans la gestion d’équipes et le suivi
               d’activités techniques dans les secteurs de l’énergie et de l’eau,
               j’ai choisi d’orienter mon parcours vers une voie qui allie
@@ -120,11 +120,15 @@ export function AboutSection({ skills }) {
                     <ul>
                       {Array.isArray(skill.skills) &&
                         skill.skills.map((skill, index) => (
-                          <li key={index}>{skill}</li>
+                          <li key={index} className="font-stretch-125%">
+                            {skill}
+                          </li>
                         ))}
                     </ul>
                     <div className="flex flex-wrap gap-2 p-2">
-                      <p className="font-semibold">Projets associés:</p>
+                      <p className="font-semibold font-stretch-200% underline">
+                        Projets associés:
+                      </p>
                       <ul>
                         {Array.isArray(skill.projets) &&
                           skill.projets.map((projet, index) => (

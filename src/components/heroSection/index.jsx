@@ -103,7 +103,7 @@ export function HeroSection() {
           {' '}
           <TitleAnime message="Bonjour, je suis Alan - Développeur Web"></TitleAnime>
           <motion.p
-            className="text-base-content bg-base-200 z-50 mx-auto mb-8 max-w-xl rounded-3xl p-2 text-lg sm:text-xl"
+            className="text-base-content bg-base-200 z-50 mx-auto mb-8 max-w-xl rounded-3xl p-2 text-lg font-stretch-125% sm:text-xl"
             initial={{ scale: 0, opacity: 0 }}
             animate={{
               scale: [0, 1],

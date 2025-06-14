@@ -25,7 +25,7 @@ export function DetailProjet({ project }) {
                 bounce: 0.2,
                 duration: 1,
               }}
-              className="mb-4 text-center text-5xl font-bold"
+              className="mb-4 text-center text-5xl font-bold text-shadow-2xs"
             >
               {project.nom}
             </motion.h1>

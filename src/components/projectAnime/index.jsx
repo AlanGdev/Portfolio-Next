@@ -42,10 +42,10 @@ export function ProjectAnime({ projects }) {
                 />
               </div>
               <div className="flex flex-col justify-between">
-                <h3 className="text-base-content mb-2 text-xl font-semibold">
+                <h3 className="text-base-content mb-2 text-xl font-semibold font-stretch-150%">
                   {project.nom}
                 </h3>
-                <p className="text-base-content text-sm">
+                <p className="text-base-content text-sm font-stretch-125%">
                   <span className="font-semibold">description: </span>{' '}
                   {project.description.slice(0, 110)}...
                 </p>

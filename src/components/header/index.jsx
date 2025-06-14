@@ -6,7 +6,7 @@ import { Restart } from '../restart';
 
 export default function Header() {
   return (
-    <header className="bg-base-200 sticky top-0 z-50 shadow-md">
+    <header className="bg-base-200 sticky top-0 z-50 font-stretch-125% shadow-md">
       <nav className="navbar bg-base-200 mb shadow-sm">
         <div className="navbar-start">
           <div className="dropdown">

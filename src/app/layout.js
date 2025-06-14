@@ -59,7 +59,9 @@ export default function RootLayout({ children }) {
           }}
         />
       </Head>
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
+      <body
+        className={`${geistSans.variable} ${geistMono.variable} font-stretch-125%`}
+      >
         <Header />
         <main className="bg-base-100 text-base-content">{children}</main>
         <Footer />
