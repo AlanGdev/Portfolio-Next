@@ -193,7 +193,7 @@ export function DetailProjet({ project }) {
                 rel="noopener noreferrer"
                 className="btn btn-outline btn-success"
               >
-                {project.nom === 'Menu Maker by Qwenta'
+                {project.nom === 'Menu Maker - Conception et diffusion de menus'
                   ? 'Voir la présentation'
                   : 'Voir le code sur GitHub'}
               </motion.a>
@@ -214,7 +214,7 @@ export function DetailProjet({ project }) {
                 rel="noopener noreferrer"
                 className="btn btn-success"
               >
-                {project.nom === 'Menu Maker by Qwenta'
+                {project.nom === 'Menu Maker - Conception et diffusion de menus'
                   ? 'Voir les spéc. techniques'
                   : 'Voir la démo'}
               </motion.a>
