@@ -22,7 +22,7 @@ export default function TerminalLoader({ onComplete }) {
     if (currentLine < lines.length) {
       const timer = setTimeout(() => {
         setCurrentLine((currentLine) => currentLine + 1);
-      }, 300);
+      }, 500);
       return () => clearTimeout(timer);
     } else {
       const closeTimer = setTimeout(() => {
