@@ -65,7 +65,7 @@ export default function Footer() {
               </svg>
             </a>
             <a
-              href="www.linkedin.com/in/alan-grolleau-developpeur-web"
+              href="https://www.linkedin.com/in/alan-grolleau-developpeur-web"
               target="_blank"
               aria-label="lien linkedin"
               rel="noopener noreferrer"

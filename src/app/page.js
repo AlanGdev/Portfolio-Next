@@ -29,7 +29,7 @@ export const metadata = {
     type: 'website',
     images: [
       {
-        url: 'https://alangrolleau-developpeurweb-portfol.vercel.app/openGraphGeneral.png',
+        url: 'https://alangrolleau-developpeurweb-portfol.vercel.app/og-image.png',
         width: 1200,
         height: 630,
       },
@@ -41,7 +41,7 @@ export const metadata = {
     description:
       'Création de sites et applications web performants avec Next.js et SEO optimisé.',
     images: [
-      'https://alangrolleau-developpeurweb-portfol.vercel.app/openGraphGeneral.png',
+      'https://alangrolleau-developpeurweb-portfol.vercel.app/og-image.png',
     ],
   },
 };

@@ -52,8 +52,8 @@ export default function RootLayout({ children }) {
                 availableLanguage: ['fr'],
               },
               sameAs: [
-                'https://www.linkedin.com/in/alan-grolleau',
-                'https://github.com/alangrolleau',
+                'https://www.linkedin.com/in/alan-grolleau-developpeur-web',
+                'https://github.com/AlanGdev',
               ],
             }),
           }}
